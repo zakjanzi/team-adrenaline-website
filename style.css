@@ -203,3 +203,45 @@ section {
       max-width: 33.33%;
     }
   }
+
+  .footer1 {
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient(to right, #383819, #2d0b00);
+    color: #fff;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 13px;
+    line-height: 5;
+  }
+
+  .row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+.logo-footer {
+  width: 80px;
+  margin-bottom: 30px;
+}
+
+.col h3 {
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.ul-footer {
+  list-style: none;
+  margin-bottom: 12px;
+}
+
+.li-footer a {
+  text-decoration: none;
+  color: #fff;
+
+}
