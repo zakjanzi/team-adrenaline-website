@@ -376,3 +376,100 @@ hr {
     flex-basis: 100%;
   }
 }
+
+.contact-section {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-bg {
+  height: 40vh;
+  background: linear-gradient(rgba(0,0,0,0.5) rgba(0,0,0,0.8)), url(./images/background.png);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-bg h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.contact-bg h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  padding: 0.4rem;
+  letter-spacing: 4px;
+
+}
+
+.line div {
+  margin: 0 0.2rem;
+}
+
+.line div:nth-child(1),
+.line div:nth-child(3){
+  height: 3px;
+  width: 70px;
+  background: #575a7b;
+  border-radius: 50%;
+}
+
+.phone-num {
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.contact-text {
+  margin: 1.6rem;
+}
+
+.contact-body {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contact-info {
+  margin: 2rem 0;
+  text-align: center;
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-info span {
+  display: block;
+}
+
+.contact-info div {
+  margin: 0.8rem;
+  padding: 1rem;
+}
+
+.contact-info span .fas {
+  font-size: 2rem;
+  padding-bottom: 0.9rem;
+  color: #bdb107;
+}
+
+.contact-info div span:nth-child(2) {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.contact-info .phone-num {
+  padding-top: 1rem;
+}
+
+.map {
+  display: flex;
+  width: 100%;
+}
