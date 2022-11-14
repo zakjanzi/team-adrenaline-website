@@ -60,7 +60,10 @@ nav ul li a {
     color: #fff;
     font-weight: 500;
     cursor: pointer;
+    text-decoration: none;
+    border: 2px solid transparent;
 }
+
 
 .btn img {
     width: 20px;
