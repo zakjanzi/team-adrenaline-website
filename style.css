@@ -8,7 +8,102 @@
     background-color: rgb(27, 27, 27);
 }
 
-.bg {
+#bg {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+#header {
   position: absolute;
 }
 
+#header h1 {
+  color: rgb(230, 240, 205);
+  font-size: 72px;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 255, 255, .35);
+  font-family: 'Bebas Neue';
+}
+
+
+.adrenaline{
+  color: #DCB624;
+  font-size: 72px;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top:  40vh;
+  text-shadow: 0 0 10px rgba(255, 255, 255, .35);
+  font-family: 'Bebas Neue';
+}
+
+#about {
+  background: url(./assets/images/about.jpg) no-repeat center ;
+  height: 100vh;
+  
+}
+
+.triangle {
+  background: #FF6B6C;
+  position: relative;
+  z-index: 1;
+  clip-path: polygon(0px 0px, 0% 0px, 100% calc(100% - 10vw), 0 100%);
+  margin-bottom: -10vw;
+ 
+}
+
+.button {
+  display: flex;
+  padding: 10px 20px;
+  border: 0;
+  outline: 0;
+}
+
+
+#schedule {
+  height: 100vh;
+}
+
+.card-header {
+  margin: 1rem;
+  text-align: center;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  height: auto;
+  background-color: blanchedalmond;
+  border-radius: 20px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+  padding: 2rem;
+  margin: 1rem;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+
+}
+
+#footer {
+  background-color: #fff;
+  z-index: 1;
+  position: relative;
+}
+
+.footer-logo {
+  z-index: 2;
+  position: relative;
+}
+
+.socials {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
