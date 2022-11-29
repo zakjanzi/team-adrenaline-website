@@ -45,7 +45,6 @@ body {
 #about {
   height: 100vh;
   position: relative;
-  z-index: 1;
   
 }
 
@@ -57,7 +56,20 @@ body {
 .sidebar {
   background-color: transparent;
   position: absolute;
-  z-index: 2; 
+  z-index: 1; 
+}
+
+.logo-about {
+  position: absolute;
+}
+
+
+
+.logo-white {
+  position: relative;
+  z-index: 1;
+  margin-top: 8%;
+
 }
 
 
