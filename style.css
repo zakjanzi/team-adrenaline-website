@@ -63,7 +63,7 @@ body {
   position: absolute;
 }
 
-.buttons {
+.about-contents {
   position:absolute; 
   left:0px;
   top:0px;
@@ -82,23 +82,37 @@ body {
 
 }
 
+#call,  #location {
 
-.about-contents {
-  
-  background-color: aqua;
-  
-}
-
-.button {
-  padding: 15px 25px;
   border: 0;
   outline: 0;
-  border-radius: 15px;
+  border-radius: 25px;
   color: #1b1b1b;
   background-color: #FF9933;
   font-family: "Bebas Neue";
-  margin-left: 120px;
+  font-size: 20px;
+  margin-left: 100px;
+  margin-bottom: 50px;
+  margin-right: 0;
+  width: 153px;
+  height: 46px;
+
 }
+
+.about-text {
+  font-family: "Bebas Neue";
+  width: 500px;
+  color: #c7c7c7;
+  font-weight: 300;
+  font-size: 30px;
+  margin-left: 55px;
+  margin-top: 20px;
+  width: 500px;
+  text-align: left;
+  z-index: 2;
+  position: relative;
+}
+
 
 
 /* #schedule {
