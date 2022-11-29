@@ -45,6 +45,7 @@ body {
 #about {
   height: 100vh;
   position: relative;
+  display: flex;
   
 }
 
@@ -92,7 +93,7 @@ body {
   background-color: #FF9933;
   font-family: "Bebas Neue";
   font-size: 20px;
-  margin-left: 100px;
+  margin-left: 70px;
   margin-bottom: 50px;
   margin-right: 0;
   width: 200px;
@@ -111,13 +112,26 @@ body {
   font-weight: 300;
   font-size: 30px;
   margin-left: 55px;
-  margin-top: 20px;
+  margin-top: 70px;
   width: 500px;
   text-align: left;
   z-index: 2;
   position: relative;
 }
 
+.classes-link {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 80px;
+  color: rgb(196, 193, 199);
+  background-color: red;
+  position:absolute; 
+  left:0px;
+  top:0px;
+  bottom: 0px;
+  z-index: 2;
+}
 
 
 /* #schedule {
