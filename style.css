@@ -2,10 +2,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-  }
+}
 
-  body {
+body {
     background-color: rgb(27, 27, 27);
+
 }
 
 #bg {
@@ -42,9 +43,12 @@
 }
 
 #about {
-  background: url(./assets/images/about.jpg) no-repeat center ;
   height: 100vh;
-  
+}
+
+#about img {
+  width: 100%;
+  height: 100vh;
 }
 
 .triangle {
