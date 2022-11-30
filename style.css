@@ -24,7 +24,7 @@ body {
 
 #header h1 {
   color: rgb(230, 240, 205);
-  font-size: 72px;
+  font-size: 60px;
   text-transform: uppercase;
   text-align: center;
   text-shadow: 0 0 10px rgba(255, 255, 255, .35);
@@ -34,7 +34,7 @@ body {
 
 .adrenaline{
   color: #DCB624;
-  font-size: 72px;
+  font-size: 60px;
   text-transform: uppercase;
   text-align: center;
   padding-top:  40vh;
@@ -65,8 +65,8 @@ body {
 }
 
 .about-contents {
-  position:absolute; 
-  left:0px;
+  position: absolute; 
+  float: right;
   top:0px;
   bottom: 0px;
   z-index: 2;
@@ -119,27 +119,45 @@ body {
   position: relative;
 }
 
-.classes-link {
+.classes-schedule {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: 80px;
+  width: 100%;
+  font-size: 40px;
   color: rgb(196, 193, 199);
-  background-color: red;
-  position:absolute; 
-  left:0px;
-  top:0px;
-  bottom: 0px;
-  z-index: 2;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin-top: 20px;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: "Bebas Neue";
+  letter-spacing: 10px;
+
 }
 
+.schedule {
+  color: #1b1b1b;
+}
 
-/* #schedule {
+/* .classes-link h1 {
+  font-family: "Bebas Neue";
+  margin-top: 300px;
+  letter-spacing: 8px;
+} */
+
+
+#schedule {
+  height: 100vh;
+  position: relative;
+}
+
+#schedule img {
+  width: 100%;
   height: 100vh;
 }
 
 
-
+/* 
 #footer {
   background-color: #fff;
   z-index: 1;
