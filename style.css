@@ -154,8 +154,8 @@ body {
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: row;
-  right: 100px;
-  bottom: 100px;
+  right: 75px;
+  bottom: 65px;
 }
 
 
@@ -175,23 +175,39 @@ body {
 
 table {
   font-family: "Bebas Neue";
+  letter-spacing: 1px;
   text-align: center;
   width: 40%;
+  border-collapse: collapse;
 }
 
-td, th {
+td {
   text-align: center;
   padding: 2px;
+  
+}
+
+th {
+  text-align: center;
+  padding: 2px;
+  letter-spacing: 4px;
+  font-size: 20px;
+  
 }
 
 .even {
-  background-color: #F9A427;
+  background-color: #FF9933;
   color: #1b1b1b;
+  margin: 5px;
+  padding: 5px;
 }
 
 .odd {
   background-color: #1b1b1b;
   color: #E6E6E6;
+  margin: 5px;
+  padding: 5px;
+
 }
 
 
