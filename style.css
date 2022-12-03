@@ -141,18 +141,21 @@ body {
 
 .schedule {
   display: flex;
-  width: 50%;
+  width: 100%;
   justify-content: flex-end;
+  height: 38vh;
 }
 
 .classes-schedule-contents {
   position: relative;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   width: 100%;
-  height: 80%;
-  color: #ebebeb;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: row;
+  right: 100px;
+  bottom: 100px;
 }
 
 
@@ -173,6 +176,7 @@ body {
 table {
   font-family: "Bebas Neue";
   text-align: center;
+  width: 40%;
 }
 
 td, th {
