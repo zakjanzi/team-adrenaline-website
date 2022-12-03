@@ -169,6 +169,32 @@ body {
 }
 
 
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 1px;
+}
+
+.even {
+  background-color: #F9A427;
+}
+
+.odd {
+  background-color: #1b1b1b;
+  color: #E6E6E6;
+}
+
+
+
+
 /* 
 #footer {
   background-color: #fff;
