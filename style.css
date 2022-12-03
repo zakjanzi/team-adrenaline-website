@@ -135,8 +135,14 @@ body {
 
 }
 
-.schedule {
+.schedule-text {
   color: #1b1b1b;
+}
+
+.schedule {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
 }
 
 .classes-schedule-contents {
@@ -149,12 +155,6 @@ body {
   color: #ebebeb;
 }
 
-/* .classes-schedule-contents h2 {
-  display: flex;
-  align-items: center;
-  color: #ebebeb;
-  margin: 100px;
-} */
 
 
 #schedule {
@@ -170,21 +170,19 @@ body {
 
 
 
-
 table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+  font-family: "Bebas Neue";
+  text-align: center;
 }
 
 td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 1px;
+  text-align: center;
+  padding: 2px;
 }
 
 .even {
   background-color: #F9A427;
+  color: #1b1b1b;
 }
 
 .odd {
