@@ -119,7 +119,7 @@ body {
   position: relative;
 }
 
-.classes-schedule {
+.classes-schedule-title {
   display: flex;
   width: 100%;
   font-size: 40px;
@@ -146,16 +146,13 @@ body {
   height: 38vh;
 }
 
-.classes-schedule-contents {
+.schedule-contents {
   position: relative;
-  width: 100%;
+  width: 50%;
   height: 100%;
+  float: right;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  flex-direction: row;
-  right: 75px;
-  bottom: 65px;
+
 }
 
 
@@ -177,8 +174,10 @@ table {
   font-family: "Bebas Neue";
   letter-spacing: 1px;
   text-align: center;
-  width: 40%;
+  width: 100%;
   border-collapse: collapse;
+  margin-top: 150px;
+  margin-right: 15px;
 }
 
 td {
