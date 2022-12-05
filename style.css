@@ -277,14 +277,6 @@ th {
   top: 30%;
 }
 
-.description, .link {
-  font-family: 'Amatic SC', cursive;
-  text-align: center;
-}
-
-.description {
-	font-size: 35px;
-}
 
 .btn {
   border: none;
@@ -295,12 +287,14 @@ th {
   outline: none;
   overflow: hidden;
   position: relative;
-  color: #fff;
+  color: #c7c7c7;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 30px;
   background-color: #1b1b1b;
   padding: 17px 60px;
-  margin: 0 auto;
+  margin: 20px;
+  font-family: "Bebas Neue";
+  letter-spacing: 5px;
 }
 
 .btn span {
@@ -315,7 +309,7 @@ th {
   top: 0;
   height: 490%;
   width: 140%;
-  background: #78c7d2;
+  background: #FF9933;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
   -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
@@ -325,14 +319,4 @@ th {
 .btn:hover:after {
   -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
-}
-
-.link {
-  font-size: 20px;
-  margin-top: 30px;
-}
-
-.link a {
-  color: #000;
-  font-size: 25px; 
 }
