@@ -199,6 +199,7 @@ td {
   text-align: center;
   padding: 1px;
   
+  
 }
 
 th {
@@ -209,12 +210,18 @@ th {
   
 }
 
+tr:hover {
+  background-color: #c7c7c7;
+}
+
+
 .even {
   background-color: #FF9933;
   color: #1b1b1b;
   margin: 5px;
   padding: 5px;
 }
+
 
 .odd {
   background-color: #1b1b1b;
@@ -296,7 +303,7 @@ th {
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
   -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
-  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(15deg);
 }
 
 .btn:hover:after {
