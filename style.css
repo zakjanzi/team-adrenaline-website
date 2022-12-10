@@ -18,6 +18,13 @@ body {
  
 }
 
+#particles2 {
+  width: 100%;
+  position: relative;
+  height: 300px;
+
+}
+
 #header {
   position: absolute;
 }
@@ -151,8 +158,10 @@ body {
 
 }
 
-.class-list :hover {
+
+.class-list h2:hover {
   color: rgb(10, 136, 84);
+  cursor: pointer;
 }
 
 
@@ -252,24 +261,13 @@ th {
   cursor: pointer;
   display: flex;
   width: 20%;
-  padding-top: 9%;
   margin-right: 10%;
   place-content: space-between;
-  flex-direction: row-reverse;
   float: right;
+  position: relative;
+  top: -150px;
 
 } 
-
-
- 
-
-
-.button_container {
-	position: absolute;
-  left: 0;
-  right: 0;
-  top: 30%;
-}
 
 
 .btn {
@@ -285,7 +283,7 @@ th {
   font-weight: 700;
   font-size: 30px;
   background-color: #1b1b1b;
-  padding: 17px 60px;
+  padding: 10px 50px;
   margin: 20px;
   font-family: "Bebas Neue";
   letter-spacing: 5px;
@@ -310,9 +308,11 @@ th {
   transform: translateX(-98%) translateY(-25%) rotate(15deg);
 }
 
+
 .btn:hover:after {
   -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  
 }
 
 
