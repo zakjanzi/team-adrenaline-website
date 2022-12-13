@@ -41,26 +41,38 @@
   </div>
 
   <!-- about -->
-  <div id="about">
+  <div id="about" class="sidebar-image">
 
-    <div>
+    <!-- <div>
       <img class="sidebar" src="./assets/images/sidebar.png">
-    </div>
+    </div> -->
 
     <div class="logo-about">
-      <img class="logo-white" src="./assets/images/logo-white.png" style="width: 25%; height: 25%;">
+      <div class="logo-white">
+        <img src="./assets/images/logo-white.png">
+      </div>
       <div class="about-text">
         <p>We provide specialised training under the guidance of expert professionals. 
           We pride ourselves on elite coaching and providing a professional service to the community
         </p>
       </div>
+      <div class="about-contents">
+        <a href="tel:+96171044297" class="btn-link" target="_blank">
+          <i class="fa-solid fa-phone-volume"></i><span>Call</span></a>
+        <a href="https://goo.gl/maps/9bEs7qJEaM63pd5r7" class="btn-link" target="_blank">
+          <i class="fa-solid fa-map-pin"></i><span>Location</span></a>
+        <a href="https://goo.gl/maps/9bEs7qJEaM63pd5r7" class="btn-link" target="_blank">
+          <i class="fa-solid fa-shirt"></i><span>Shop</span></a>
+      </div>
     </div>
 
-    <img src="./assets/images/about.jpg">
+    <!-- <img src="./assets/images/about.jpg"> -->
 
-    <div class="about-contents">
-      <a href="tel:+96171044297" id="call" target="_blank"><i class="fa-solid fa-phone-volume" style="padding-right: 10px;"></i>Call</a>
-      <a href="https://goo.gl/maps/9bEs7qJEaM63pd5r7" id="location" target="_blank"><i class="fa-solid fa-map-pin" style="padding-right: 10px;"></i>Location</a>
+    <div class="about-right">
+      <div class="section-header text-center">
+        <h1>Classes</h1>
+        <i class="fa-solid fa-angles-down"></i>
+      </div>
     </div>
      
   </div>
@@ -68,194 +80,184 @@
 
 
   <!-- schedule -->
- <div id="schedule">
-
-  
-    
-    <img src="./assets/images/schedule.png" height="1000" width="1900">
-
-   
-
-    <div class="classes-schedule-title">
-      <h1>Classes</h1>
-      <h1 class="schedule-text">Schedule</h1>
-    </div>
-
-    <div class="class-list">
-      <h2>Gymnastics</h2>
-      <h2>Freerunning</h2>
-      <h2>Calisthenics</h2>
-      <h2>Mixed Aerials</h2>
-      <h2>Adrenaline Rush</h2>
-      <h2>Freestyle</h2> 
-      <button class="btn"><span>Private</span></button>
-    </div>
-
-    
-
-    <div class="schedule-contents">
+ <div id="schedule" class="container">
+    <div class="w-50 schedule-section">
+      <div class="section-header text-center">
+        <h1 class="text-dark">Schedule</h1>
+      </div>
+      <div class="schedule-contents">
       
-          <table>
-            <th style="width:5%" class="even" rowspan="6" >Monday</th>
-          </tr>
-          <tr class="even" >
-            <td style="width:10%">Gymnastics 1</td>
-            <td style="width:10%">4PM - 5PM</td>
-          </tr>
-
-          <tr class="even">
-            <td>Gymnastics 2</td>
-            <td>5PM - 6PM</td>
-          </tr>
-
-          <tr class="even">
-            <td>Gymnastics 3</td>
-            <td>6PM - 7PM</td>
-          </tr>
-
-          <tr class="even">
-            <td>Gymnastics 4</td>
-            <td>7PM - 8:30PM</td>
-          </tr class="even">
-
-          <tr class="even">
-            <td>Calisthenics</td>
-            <td>8:30PM - </td>
-          </tr>
-          
-          <tr class="odd">
-            <th rowspan="5">Tuesday</th>
-          </tr>
-
-          <tr class="odd">
-            <td>Mixed Aerials</td>
-            <td>5PM - 6PM</td>
-          </tr>
-
-          <tr class="odd">
-            <td>Parkour 1</td>
-            <td>6PM - 7PM</td>
-          </tr>
-
-          <tr class="odd">
-            <td>Parkour 2</td>
-            <td>7PM - 8PM</td>
-          </tr>
-
-          <tr class="odd">
-            <td>Adrenaline Rush</td>
-            <td>8:30PM</td>
-          </tr>
-          
+        <table>
           <tr>
-            <th class="even" rowspan="4">Wednesday</th>
-          </tr>
+          <th style="width:5%" class="even" rowspan="6" >Monday</th>
+        </tr>
+        <tr class="even">
+          <td style="width:10%">Gymnastics 1</td>
+          <td style="width:10%">4PM - 5PM</td>
+        </tr>
 
-          <tr class="even">
-            <td>Parkour 1</td>
-            <td>6PM - 7PM</td>
-          </tr>
-          <tr class="even">
-            <td>Parkour 2</td>
-            <td>7PM - 8PM</td>
-          </tr>
-          <tr class="even">
-            <td>Calisthenics</td>
-            <td>8:30PM</td>
-          </tr>
-  
-  
-          <tr>
-            <th class="odd" rowspan="5">Thursday</th>
-          </tr>
-          
-          <tr class="odd">
-            <td>Mixed Aerials</td>
-            <td>5PM - 6PM</td>
-          </tr>
-          
-          <tr class="odd">
-            <td>Parkour 1</td>
-            <td>6PM - 7PM</td>
-          </tr>
-  
-          <tr class="odd">
-            <td>Parkour 2</td>
-            <td>7PM - 8PM</td>
-          </tr>
-  
-          <tr class="odd">
-            <td>Adrenaline Rush</td>
-            <td>8:30PM</td>
-          </tr>
-  
-          <tr>
-            <th class="even" rowspan="7">Friday</th>
-          </tr>
-  
-          <tr class="even">
-            <td>Gymnastics 1</td>
-            <td>4PM - 5PM</td>
-          </tr>
-  
-          <tr class="even">
-            <td>Gymnastics 2</td>
-            <td>5PM - 6PM</td>
-          </tr>
-  
-          <tr class="even">
-            <td>Parkour 1</td>
-            <td>6PM - 7PM</td>
-          </tr>
-  
-          <tr class="even">
-            <td>Parkour 2</td>
-            <td>7PM - 8PM</td>
-          </tr>
-          
-          <tr class="even"> 
-            <td>Mixed Aerials</td>
-            <td>6:30PM - 7:30PM</td>
-          </tr>
-          
-          <tr class="even"> 
-            <td>Mixed Aerials</td>
-            <td>6:30PM - 7:30PM</td>
-          </tr>
-          
-           <tr>
-            <th class="odd" rowspan="5">Saturday</th>
-          </tr>
-          
-          <tr class="odd">
-            <td>Gymnastics 1</td>
-            <td>9AM - 10PM</td>
-          </tr>
-          
-          <tr class="odd">
-            <td>Gymnastics 2-3</td>
-            <td>10AM - 11AM</td>
-          </tr>
-          
-          <tr class="odd">
-            <td>Gymnastics 1</td>
-            <td>11AM - 12PM</td>
-          </tr>
-  
-          <tr class="odd">
-            <td>Freestyle</td>
-            <td>5PM - 8PM</td>
-          </tr>
-  
-     </table>
+        <tr class="even">
+          <td>Gymnastics 2</td>
+          <td>5PM - 6PM</td>
+        </tr>
+
+        <tr class="even">
+          <td>Gymnastics 3</td>
+          <td>6PM - 7PM</td>
+        </tr>
+
+        <tr class="even">
+          <td>Gymnastics 4</td>
+          <td>7PM - 8:30PM</td>
+        </tr class="even">
+
+        <tr class="even">
+          <td>Calisthenics</td>
+          <td>8:30PM - </td>
+        </tr>
+        
+        <tr class="odd">
+          <th rowspan="5">Tuesday</th>
+        </tr>
+
+        <tr class="odd">
+          <td>Mixed Aerials</td>
+          <td>5PM - 6PM</td>
+        </tr>
+
+        <tr class="odd">
+          <td>Parkour 1</td>
+          <td>6PM - 7PM</td>
+        </tr>
+
+        <tr class="odd">
+          <td>Parkour 2</td>
+          <td>7PM - 8PM</td>
+        </tr>
+
+        <tr class="odd">
+          <td>Adrenaline Rush</td>
+          <td>8:30PM</td>
+        </tr>
+        
+        <tr>
+          <th class="even" rowspan="4">Wednesday</th>
+        </tr>
+
+        <tr class="even">
+          <td>Parkour 1</td>
+          <td>6PM - 7PM</td>
+        </tr>
+        <tr class="even">
+          <td>Parkour 2</td>
+          <td>7PM - 8PM</td>
+        </tr>
+        <tr class="even">
+          <td>Calisthenics</td>
+          <td>8:30PM</td>
+        </tr>
+
+
+        <tr>
+          <th class="odd" rowspan="5">Thursday</th>
+        </tr>
+        
+        <tr class="odd">
+          <td>Mixed Aerials</td>
+          <td>5PM - 6PM</td>
+        </tr>
+        
+        <tr class="odd">
+          <td>Parkour 1</td>
+          <td>6PM - 7PM</td>
+        </tr>
+
+        <tr class="odd">
+          <td>Parkour 2</td>
+          <td>7PM - 8PM</td>
+        </tr>
+
+        <tr class="odd">
+          <td>Adrenaline Rush</td>
+          <td>8:30PM</td>
+        </tr>
+
+        <tr>
+          <th class="even" rowspan="7">Friday</th>
+        </tr>
+
+        <tr class="even">
+          <td>Gymnastics 1</td>
+          <td>4PM - 5PM</td>
+        </tr>
+
+        <tr class="even">
+          <td>Gymnastics 2</td>
+          <td>5PM - 6PM</td>
+        </tr>
+
+        <tr class="even">
+          <td>Parkour 1</td>
+          <td>6PM - 7PM</td>
+        </tr>
+
+        <tr class="even">
+          <td>Parkour 2</td>
+          <td>7PM - 8PM</td>
+        </tr>
+        
+        <tr class="even"> 
+          <td>Mixed Aerials</td>
+          <td>6:30PM - 7:30PM</td>
+        </tr>
+        
+        <tr class="even"> 
+          <td>Mixed Aerials</td>
+          <td>6:30PM - 7:30PM</td>
+        </tr>
+        
+         <tr>
+          <th class="odd" rowspan="5">Saturday</th>
+        </tr>
+        
+        <tr class="odd">
+          <td>Gymnastics 1</td>
+          <td>9AM - 10PM</td>
+        </tr>
+        
+        <tr class="odd">
+          <td>Gymnastics 2-3</td>
+          <td>10AM - 11AM</td>
+        </tr>
+        
+        <tr class="odd">
+          <td>Gymnastics 1</td>
+          <td>11AM - 12PM</td>
+        </tr>
+
+        <tr class="odd">
+          <td>Freestyle</td>
+          <td>5PM - 8PM</td>
+        </tr>
+
+   </table>
 
       </div>
-
     </div>
+    <div class="w-50">
+      <div class="class-card">
+          <div class="w-50"><a href="#" class="card-block">Gymnastics</a></div>
+          <div class="w-50"><a href="#" class="card-block">Freerunning</a></div>
+          <div class="w-50"><a href="#" class="card-block">Calisthenics</a></div>
+          <div class="w-50"><a href="#" class="card-block">Mixed Aerials</a></div>
+          <div class="w-50"><a href="#" class="card-block">Adrenaline Rush</a></div>
+          <div class="w-50"><a href="#" class="card-block">Freestyle</a>      </div>
+      </div>
+    </div>  
+</div>
 
 
     <footer id="footer">
-
       <div class="custom-shape-divider-top-1670275589">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
