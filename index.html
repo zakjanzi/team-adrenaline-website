@@ -7,7 +7,7 @@
   <title>Team Adrenaline</title>
 
   <!-- linking css -->
-  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
     
   <!-- linking google font -->
 
@@ -23,29 +23,23 @@
 
 <body>
 
-  <div id="bg">
+  <header id="particles-header">
         
     <!-- patricle js link -->
         <script type="text/javascript" src="./js/particles.min.js"></script>
-        <script type="text/javascript" src="./js/custom.js"></script>
-    
-    <!---->
+        <script type="text/javascript" src="./js/particles-header.js"></script>
 
-    <!-- hero -->
-    <div id="header"> 
+    <!-- Page 1 (hero) -->
+    <div id="hero"> 
       <h1>
           <span>Team</span>
           <span class="adrenaline">Adrenaline</span>
       </h1>
     </div>
-  </div>
+  </header>
 
-  <!-- about -->
+  <!-- Page 2 -->
   <div id="about" class="sidebar-image">
-
-    <!-- <div>
-      <img class="sidebar" src="./assets/images/sidebar.png">
-    </div> -->
 
     <div class="logo-about">
       <div class="logo-white">
@@ -61,14 +55,14 @@
           <i class="fa-solid fa-phone-volume"></i><span>Call</span></a>
         <a href="https://goo.gl/maps/9bEs7qJEaM63pd5r7" class="btn-link" target="_blank">
           <i class="fa-solid fa-map-pin"></i><span>Location</span></a>
-        <a href="https://goo.gl/maps/9bEs7qJEaM63pd5r7" class="btn-link" target="_blank">
+
+          <!-- was this extra page linked correctly? -->
+        <a href="./shop.html" class="btn-link">
           <i class="fa-solid fa-shirt"></i><span>Shop</span></a>
       </div>
     </div>
 
-    <!-- <img src="./assets/images/about.jpg"> -->
-
-    <div class="about-right">
+    <div class="classes-title">
       <div class="section-header text-center">
         <h1>Classes</h1>
         <i class="fa-solid fa-angles-down"></i>
@@ -79,7 +73,7 @@
  
 
 
-  <!-- schedule -->
+  <!-- Page 3 -->
  <div id="schedule" class="container">
     <div class="w-50 schedule-section">
       <div class="section-header text-center">
@@ -241,6 +235,7 @@
         </tr>
 
    </table>
+   
 
       </div>
     </div>
@@ -251,24 +246,26 @@
           <div class="w-50"><a href="#" class="card-block">Calisthenics</a></div>
           <div class="w-50"><a href="#" class="card-block">Mixed Aerials</a></div>
           <div class="w-50"><a href="#" class="card-block">Adrenaline Rush</a></div>
-          <div class="w-50"><a href="#" class="card-block">Freestyle</a>      </div>
+          <div class="w-50"><a href="#" class="card-block">Freestyle</a></div>
       </div>
     </div>  
 </div>
 
+<!-- Footer -->
 
     <footer id="footer">
-      <div class="custom-shape-divider-top-1670275589">
+      <div class="curve">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
         </svg>
     </div>
 
-    <div id="particles2">
+    <div id="particles-footer">
         
       <!-- patricle js link -->
           <script type="text/javascript" src="./js/particles.min.js"></script>
-          <script type="text/javascript" src="./js/custom2.js"></script>
+          <script type="text/javascript" src="./js/particles-footer.js"></script>
+
           <div class="socials">
             <img src="./assets/icons/fb.png" width="40px" height="40px">
             <img src="./assets/icons/yt.png" width="40px" height="40px">

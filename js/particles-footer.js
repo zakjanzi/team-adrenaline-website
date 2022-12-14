@@ -1,6 +1,6 @@
 /* ---- particles.js config ---- */
 
-particlesJS("particles2", {
+particlesJS("particles-footer", {
     "particles": {
       "number": {
         "value": 30,
