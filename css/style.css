@@ -14,7 +14,24 @@ body {
   font-weight: 300;
 }
 
+/* animations */
 
+.schedule-section.active{
+  /* transform: translateY(0); */
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  /* transform: translateX(-100%); */
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+}
 
 #particles-header {
   position: relative;
@@ -210,6 +227,10 @@ height: 38vh;
 position: relative;
 }
 
+.schedule-contents .hoveder-table .gymnastics{
+  background-color: red;
+}
+
 table {
   font-family: "Bebas Neue";
   letter-spacing: 1px;
@@ -231,9 +252,11 @@ background-size: 100%;
 }
 
 .container{
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .w-50{
@@ -254,7 +277,10 @@ text-align: center;
 padding: 2px;
 letter-spacing: 4px;
 font-size: 25px;
+}
 
+tr.highlight-row{
+  background-color: red;
 }
 
 .even {
@@ -362,25 +388,26 @@ padding: 5px;
 
 
 #footer {
-background-color: #ffffff;
-position: relative;
-width: 100%;
+  background-color: #ffffff;
+  position: relative;
+  width: 100%;
 }
 
 
 .socials {
   display: flex;
   position: absolute;  
-  right: 50px;
-  top: calc(50% + 70px);
+  right: 15%;
+  top: calc(50% + 30px);
+  transform: translateY(-50%);
 } 
 
 .socials a{
   position: relative;
   display: block;
   text-decoration: none;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -412,35 +439,73 @@ width: 100%;
 }
 
 .footer-content-wrap .footer-logo{
+  max-width: 250px;
   flex: 1;
+}
+.footer-content-wrap .footer-links{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 2;  
+  padding-left: 100px;
+}
+
+.footer-content-wrap .footer-links .link-section{
+  display: flex;
+  flex-direction: column; 
+  border-left: 1px solid #2E2E2E;
+}
+
+.footer-content-wrap .footer-links .link-section + .link-section{
+  margin-left: 30px;
+}
+
+.footer-content-wrap .footer-links .link-section a{
+  text-decoration: none;
+  margin: 15px 20px;
+}
+
+.footer-content-wrap .footer-links .link-section a span{
+  color: #C7C7C7;
+  transition: all ease-in-out 0.2s;
+}
+
+.footer-content-wrap .footer-links .link-section a:hover span{
+  color: #FF9933;
+}
+
+.footer-content-wrap .footer-links .link-section a img{
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: middle;
+  max-width: 15px;
 }
 
 .footer-content-wrap .contact-details{
   display: flex;
   flex-direction: column;
-  padding-left: 50px;
-  flex: 2;
+  margin-left: auto;  
+  padding-right: 50px;
   height: 100%;
 }
 
 .footer-content-wrap .contact-details p{
-  margin-top: auto;
-  margin-bottom: auto;  
+  margin:15px 0;
 }
 
 .footer-content-wrap .contact-details p i{
   font-size: 26px;
+  vertical-align: middle;
+  color: #ffffff    ;
 }
 
 .footer-content-wrap .contact-details p span{
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .footer-content i + span{
   margin-left: 10px;
 }
-
-/* not appearing? */
 
 .footer-logo {
   position: relative;
@@ -479,7 +544,8 @@ width: 100%;
 
 .footer-wave{
   position: relative;
-  height: 450px;
+  display: block;
+  height: 300px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -491,10 +557,10 @@ width: 100%;
   top: 0;
   left: 0;
   content: '';
-  background: url(../assets/images/footer-waves.svg) no-repeat left top;
+  background: url(../assets/images/footer-wave.png) no-repeat left bottom;
   background-size: cover;
   width: 100%;
-  height: 250px;
+  height: 190px;
   z-index: 3;
 }
 
@@ -504,6 +570,6 @@ width: 100%;
   width: 100%;
   color: #d2d2d2;
   justify-content: center;
-  padding: 50px 0;
+  padding: 20px 0;
   background: #1b1b1b;
 }

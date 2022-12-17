@@ -1,0 +1,17 @@
+.schedule-section.active{
+  /* transform: translateY(0); */
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  /* transform: translateX(-100%); */
+  transition: all 1s;
+}
+
+<div class="class-card hidden">
+
+<h1 class="hidden">Classes</h1>
+
+<div id="hero" class="hidden">
