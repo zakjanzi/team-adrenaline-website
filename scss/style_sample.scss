@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;900&display=swap');
 
+//Fonts
+
+$main-font: "Bebas Neue";
+
 //Colors
 $primary-color: #FF9933;
 $secondary-color: #C7C7C7;
 $background-color: #1b1b1b;
 
-//Fonts
-
-$main-font: "Bebas Neue";
+//Document
 
 * {
   padding: 0;
@@ -28,9 +30,9 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
+// ---- //
 
-
-// Header section starts
+// Header section
 #particles-header {
     position: relative;
     height: 100vh;
@@ -63,10 +65,10 @@ body {
         }
     }
 }
-// header section ends
+// end
 
 
-// About starts
+// About
 #about {  
   height: 100vh;
   width: 100%;
@@ -140,9 +142,9 @@ body {
   }
 
 }
-// About ends
+// end
 
-// schedule section starts
+// Schedule section
 #schedule {
   height: 100vh;
   position: relative;
@@ -225,9 +227,9 @@ body {
     }
   }
 }
-// schedule section ends
+// end
 
-// footer section starts
+// footer section
 #footer {
   background-color: #ffffff;
   position: relative;
@@ -366,7 +368,10 @@ body {
     margin-left: 10px;
   }
 }
-// footer section ends
+// end
+
+
+//other
 
 .container{
   display: flex;
@@ -509,3 +514,10 @@ body {
     margin-left: 10px;
   }
 }
+
+
+//Fonts
+
+$main-font: "Bebas Neue";
+
+
