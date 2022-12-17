@@ -7,8 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Team Adrenaline</title>
 
-  <!-- linking css -->
-  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <!-- linking css
+  <link rel="stylesheet" href="./css/style.css"> -->
+
+  <!-- linking scss -->
+  <link rel="stylesheet" href="./css/style_sample.css">
 
   <!-- linking google font -->
 
@@ -20,17 +23,13 @@
 
   <script src="https://kit.fontawesome.com/f736e9ace9.js" crossorigin="anonymous"></script>
 
-  <!-- linking js animations -->
-
-  <script defer type="text/javascript" src="./js/animation-effects.js"></script>
-
 </head>
 
 <body>
 
   <header id="particles-header">
     <!-- Page 1 (hero) -->
-    <div id="hero" class="hidden">
+    <div id="hero">
       <h1>
         <span>Team</span>
         <span class="adrenaline">Adrenaline</span>
@@ -64,14 +63,12 @@
 
     <div class="classes-title">
       <div class="section-header text-center">
-        <h1 class="hidden">Classes</h1>
+        <h1>Classes</h1>
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </div>
 
   </div>
-
-
 
   <!-- Page 3 -->
   <div id="schedule" class="container">
@@ -83,12 +80,15 @@
 
         <table id="schedule-table">
           <tr>
-            <th style="width:5%" class="even" rowspan="6">Monday</th>
+            <th class="even" rowspan="6">
+              <span class="desktop-only">Monday</span>
+              <span class="mobile">Mon</span>
+            </th>
           </tr>
 
           <tr class="even gymnastics">
-            <td style="width:10%">Gymnastics 1</td>
-            <td style="width:10%">4PM - 5PM</td>
+            <td>Gymnastics 1</td>
+            <td>4PM - 5PM</td>
           </tr>
 
           <tr class="even gymnastics">
@@ -112,7 +112,10 @@
           </tr>
 
           <tr class="odd">
-            <th rowspan="5">Tuesday</th>
+            <th rowspan="5">
+            <span class="desktop-only">Tuesday</span>
+            <span class="mobile">Tue</span>
+            </th>
           </tr>
 
           <tr class="odd mixed">
@@ -136,7 +139,10 @@
           </tr>
 
           <tr>
-            <th class="even" rowspan="4">Wednesday</th>
+            <th class="even" rowspan="4">
+              <span class="desktop-only">Wednesday</span>
+              <span class="mobile">Wed</span>
+            </th>
           </tr>
 
           <tr class="even">
@@ -155,7 +161,10 @@
           </tr>
 
           <tr>
-            <th class="odd" rowspan="5">Thursday</th>
+            <th class="odd" rowspan="5">
+              <span class="desktop-only">Thursday</span>
+              <span class="mobile">Thu</span>
+            </th>
           </tr>
 
           <tr class="odd mixed">
@@ -179,7 +188,10 @@
           </tr>
 
           <tr>
-            <th class="even" rowspan="7">Friday</th>
+            <th class="even" rowspan="7">
+              <span class="desktop-only">Friday</span>
+              <span class="mobile">Fri</span>
+            </th>
           </tr>
 
           <tr class="even gymnastics">
@@ -213,7 +225,10 @@
           </tr>
 
           <tr>
-            <th class="odd" rowspan="5">Saturday</th>
+            <th class="odd" rowspan="5">
+              <span class="desktop-only">Saturday</span>
+              <span class="mobile">Sat</span>
+            </th>
           </tr>
 
           <tr class="odd gymnastics">
@@ -241,8 +256,8 @@
 
       </div>
     </div>
-    <div class="w-50">
-      <div class="class-card hidden">
+    <div class="w-50 schedule-card">
+      <div class="class-card">
         <div class="w-50 card-box"><a href="#" class="card-block">Gymnastics</a></div>
         <div class="w-50 card-box"><a href="#" class="card-block">Freerunning</a></div>
         <div class="w-50 card-box"><a href="#" class="card-block">Calisthenics</a></div>
@@ -257,7 +272,7 @@
 
     <!-- Footer -->
 
-    <div class="footer-content container">
+    <div class="footer-content container">  
       <div class="w-50">
         <div class="footer-content-wrap">
           <div class="footer-logo">
@@ -310,14 +325,12 @@
       <div class="copyright-text">
         <p>Team Adrenaline © 2012 - 2022 All rights reserved</p>
       </div>
-
-
     </div>
     <!-- patricle js link -->
     <script type="text/javascript" src="./js/particles.min.js"></script>
     <script type="text/javascript" src="./js/particles-header.js"></script>
     <script type="text/javascript" src="./js/particles-footer.js"></script>
-    <script type="text/javascript" src="./js/hover-animation.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
 </body>
 
 </html>
