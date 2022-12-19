@@ -30,7 +30,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
-// ---- //
+
 
 // Header section
 #particles-header {
@@ -65,7 +65,7 @@ body {
         }
     }
 }
-// end
+
 
 
 // About
@@ -81,9 +81,9 @@ body {
     background-color: #1B1B1B;
   }
 
-  @media only screen and (max-width:767px) {
-    //for tablet
-  }
+  // @media only screen and (max-width:767px) {
+  //   //for tablet
+  // }
 
   @media only screen and (max-width:400px) {
     height: auto;
@@ -98,11 +98,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @media only screen and (max-width:400px) {
-      width: 100%;
-      padding: 0 15px;
-    }
-    &::after{
+   
+    &::after {
       position: absolute;
       content: '';
       top: 0;
@@ -113,7 +110,7 @@ body {
       background-color: #1B1B1B;
       z-index: -1;
       @media only screen and (max-width:400px) {
-        content:none;
+        content: none;
       }
     }
     .about-text {
@@ -131,28 +128,40 @@ body {
     }
     .about-contents {
       margin-top: 80px;
+      @media only screen and (max-width:400px) {
+        display: flex;
+      }
     }
   }
   
-  .classes-title{
+  .classes-title {
     position: relative;
     width: calc(50% - 150px);
     display: flex;
     justify-content: center;
+    @media only screen and (max-width:400px) { 
+      width: 100%;
+    }
   }
 
 }
-// end
+
 
 // Schedule section
 #schedule {
   height: 100vh;
   position: relative;
   display: flex;
-  .schedule-section{
+  @media only screen and (max-width:400px) { 
+    height: auto;
+  }
+  .schedule-section {
     background:url(../assets/images/schedule-section-1.png) no-repeat left top;
     background-size: 100%;
     order: 1;
+    @media only screen and (max-width:400px) { 
+      order: 2;
+    }
     .schedule-contents {
       position: relative;
       table{
@@ -165,6 +174,10 @@ body {
           td {
             text-align: center;
             padding: 1px;
+            @media only screen and (max-width:400px) { 
+              padding: 5px 0;
+              text-align: left;
+            }
           }
           
           th {
@@ -172,6 +185,9 @@ body {
             padding: 2px;
             letter-spacing: 4px;
             font-size: 25px;
+            @media only screen and (max-width:400px) { 
+              min-width: 100px;
+            }
           }
           
           tr.highlight-row{
@@ -195,9 +211,17 @@ body {
       }
     }
   }
+
+
+
+
+
   .schedule-card{
     position: relative;
     order: 2;
+    @media only screen and (max-width:400px) { 
+      order: 1;
+    }
     .class-card{
       display: flex;
       width: 100%;
@@ -220,27 +244,37 @@ body {
         align-items: center;
         justify-content: center;
         transition: all ease-in-out 0.2s;
+        @media only screen and (max-width:400px) {
+          height: 140px;
+          width: 140px;
+          border-radius: 10px;
+          font-size: 16px;
+        }
+        }
         &:hover {
           background: #FF9933;
         }
       }
     }
   }
-}
-// end
+
+
 
 // footer section
 #footer {
   background-color: #ffffff;
   position: relative;
   width: 100%;
-  .footer-wave{
+  .footer-wave {
     position: relative;
     display: block;
     height: 300px;
     display: flex;
     align-items: center;
     overflow: hidden;
+    @media only screen and (max-width:400px) {
+      height: 200px;
+    }
     &::after{
       position: absolute;
       top: 0;
@@ -251,6 +285,10 @@ body {
       width: 100%;
       height: 190px;
       z-index: 3;
+      @media only screen and (max-width:400px) {
+        background-position: 0 0;
+        background-size: 100%;
+      }
     }
     #particles-footer {
       position: relative;
@@ -262,6 +300,12 @@ body {
       right: 15%;
       top: calc(50% + 30px);
       transform: translateY(-50%);
+      @media only screen and (max-width:400px) { 
+        left: 50%;
+        top: calc(50% + 40px);
+        transform: translate(-50%, -50%);
+        right: unset;
+      }
       a{
         position: relative;
         display: block;
@@ -270,6 +314,10 @@ body {
         height: 100px;
         border-radius: 50%;
         overflow: hidden;
+        @media only screen and (max-width:400px) { 
+          width: 50px;
+          height: 50px;
+        }
         img{
           width: 100%;
           height: auto;
@@ -287,6 +335,10 @@ body {
     justify-content: center;
     padding: 20px 0;
     background: #1b1b1b;
+    @media only screen and (max-width:400px) { 
+      font-size: 12px;
+      padding: 12px 0;
+    }
   }
 }
 
@@ -297,12 +349,15 @@ body {
   outline: #2E2E2E;  
   background-color: rgb(27, 27, 27);
   padding-top: 90px;
-  .footer-content-wrap{
+  .footer-content-wrap {
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 100%;
+    @media only screen and (max-width:400px) {
+      flex-direction: column;
+    }
     .footer-logo{
       max-width: 250px;
       flex: 1;
@@ -313,6 +368,11 @@ body {
       flex-wrap: wrap;
       flex: 2;  
       padding-left: 100px;
+      @media only screen and (max-width:400px) {
+        padding-left: 0;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
       .link-section{
         display: flex;
         flex-direction: column; 
@@ -348,6 +408,9 @@ body {
       margin-left: auto;  
       padding-right: 50px;
       height: 100%;
+      @media only screen and (max-width:400px) {
+        padding-right: 0;
+      }
       p{
         margin:15px 0;
         i{
@@ -368,7 +431,7 @@ body {
     margin-left: 10px;
   }
 }
-// end
+
 
 
 //other
@@ -386,6 +449,10 @@ body {
   width: 100%;
   flex: 0 0 50%;
   max-width: 50%;
+  @media only screen and (max-width:400px) {
+    flex: 0 0 100%;
+    max-width: 100%; 
+  }
 }
 
 .mx-auto{
@@ -411,13 +478,16 @@ body {
   font-size: 40px;
   margin-top:auto;
   margin-bottom: 20px;
-  h1{
+  h1 {
     position: relative;
     display: block;
     font-family: "Bebas Neue";
     letter-spacing: 10px;
     color: #EAEAEA;
     font-size: 2.5em;
+    @media only screen and (max-width:400px) {
+      font-size: 1.8em;
+    }
     &.text-dark{
       color: #1b1b1b;
       }
@@ -454,6 +524,9 @@ body {
   border-radius: 15px;  
   border: 1px solid #2e2e2e;
   transition: all ease-in-out 0.2s;
+  @media only screen and (max-width:400px) { 
+    font-size: 20px;
+  }
   span {
     position: relative; 
     z-index: 1;
@@ -516,8 +589,23 @@ body {
 }
 
 
-//Fonts
+.mobile{
+  display: none;
+  @media only screen and (max-width:400px) {
+    display: block;
+  }
+}
 
-$main-font: "Bebas Neue";
+.not-mobile{
+    display: block;
+}
 
 
+@media only screen and (min-width:1024px) {
+  .desktop-only {
+    display: block;
+    @media only screen and (max-width:400px) {
+      display: none;
+    }
+  }
+}

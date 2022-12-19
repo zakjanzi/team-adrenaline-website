@@ -558,11 +558,16 @@ padding: 5px;
   background: #1b1b1b;
 }
 
-.mobile{display: none;}
-.not-mobile{display: block;}
+.mobile {
+  display: none;
+}
+
+.not-mobile  {
+  display: block;
+}
 
 @media only screen and (min-width:1024px) {
-  .desktop-only{
+  .desktop-only {
     display: block;
   }
 }
@@ -627,7 +632,9 @@ padding: 5px;
     min-width: 100px;
   }
 
-  .mobile{display: block;}
+  .mobile{
+    display: block;
+  }
   .desktop-only{
     display: none;
   }
