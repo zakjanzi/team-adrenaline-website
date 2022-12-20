@@ -36,7 +36,7 @@ body {
   letter-spacing: 5px;
 }
 
-.adrenaline{
+.adrenaline-title {
 color: #DCB624;
 font-size: 40px;
 text-transform: uppercase;
@@ -205,7 +205,7 @@ height: 38vh;
 position: relative;
 }
 
-.schedule-contents .hoveder-table .gymnastics{
+.schedule-contents .hover-table .gymnastics{
   background-color: red;
 }
 
@@ -264,7 +264,7 @@ font-size: 25px;
 }
 
 tr.highlight-row{
-  background-color: red;
+  background-color: rgb(54, 92, 5);
 }
 
 .even {
