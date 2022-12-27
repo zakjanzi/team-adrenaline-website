@@ -1,6 +1,8 @@
 
 const table = document.getElementById('schedule-table');
 const classCard = document.querySelector('.class-card').children;
+const buttonToggle = document.getElementById('toggleButton');
+const buttonContent = document.getElementById('private-content-class');
 
 function AddClassToRow(scheduleName){
     for (let row of table.rows){
@@ -35,5 +37,13 @@ function hoverCard(){
 
     }
 }
+
+buttonToggle.addEventListener('click',()=>{
+    if (buttonContent.style.display === "none") {
+        buttonContent.style.display = "block";
+    } else {
+        buttonContent.style.display = "none";
+    }
+})
 
 hoverCard();
