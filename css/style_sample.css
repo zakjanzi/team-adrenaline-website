@@ -543,9 +543,6 @@ body {
   background: #3b5999;
 }
 #footer .footer-wave .socials ul li:nth-child(2) a:before {
-  background: #55acee;
-}
-#footer .footer-wave .socials ul li:nth-child(3) a:before {
   background: #cd486b;
 }
 #footer .copyright-text {
