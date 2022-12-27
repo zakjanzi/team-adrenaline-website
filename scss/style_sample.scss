@@ -33,10 +33,10 @@ body {
   font-weight: 300;
 }
 
-// Header section
+// Page 1 - Header section
 #particles-header {
   position: relative;
-  height: calc(100vh - 50px);
+  height: 100vh;
   #hero {
     position: absolute;
     width: 100%;
@@ -62,29 +62,28 @@ body {
   }
 }
 
-// About
+// Page 2 - About section
 #about { 
   position: relative;
   height: 100vh;
   width: 100%;
   display: flex;
-  // background: url(../assets/images/about-background.png) no-repeat center;
-  // background-size: 100%;
+  overflow: hidden;
   &.sidebar-image {
     z-index: 1;
-    background-color: #1b1b1b;
+    background-color: $background-color;
   }
 
   @include mobile-only {
     height: auto;
     flex-direction: column;
-    background: #1b1b1b;
+    background: $background-color;
   }
 
   @include tablet-only {
     height: auto;
     flex-direction: column;
-    background: #1b1b1b;
+    background: $background-color;
   }
 
   .logo-about {
@@ -111,7 +110,7 @@ body {
       clip-path: polygon(0 0, 15% 0, 100% 100%, 0% 100%);
       width: 100%;
       height: 100vh;
-      background-color: #1b1b1b;
+      background-color: $background-color;
       z-index: -1;
       @include mobile-only {
         content: none;
@@ -122,9 +121,9 @@ body {
     }
     .about-text {
       position: relative;
-      font-family: "Bebas Neue";
+      font-family: $main-font;
       width: 500px;
-      color: #c7c7c7;
+      color: $secondary-color;
       font-weight: 300;
       font-size: 30px;
       width: 500px;
@@ -165,7 +164,11 @@ body {
     display: block;
     left: 0;
     top: 0;
+    right: 0;
+    bottom: 0;
     z-index: -1;
+    width: 100%;
+    height: 100%;
     @include tablet-only{
       position: relative;
       left: unset;
@@ -179,8 +182,8 @@ body {
       margin-bottom: 20px;
     }
     video {
-      min-width: 100%;
-      min-height: 100vh;   
+      width: 100%;
+      height: auto;   
       @include tablet-only{
         width: 100%;
         height: auto;
@@ -199,7 +202,7 @@ body {
       position: absolute;
       top: 0;
       left: 0;
-      background-image: linear-gradient(45deg, rgba($primary-color, 0.7) 50%, rgba(#ffffff00,0) 50%);
+      background-image: linear-gradient(45deg, rgba($primary-color, 0.4) 100%, rgba($primary-color,0) 100%);
       background-size: 3px 3px;
       z-index: 2;
       @include tablet-only{
@@ -212,7 +215,7 @@ body {
   }
 }
 
-// Schedule section
+// Page 3 - Schedule section
 #schedule {
   position: relative;
   min-height: 100vh;  
@@ -244,7 +247,7 @@ body {
     .schedule-contents {
       position: relative;
       table {
-        font-family: "Bebas Neue";
+        font-family: $main-font;
         letter-spacing: 1px;
         text-align: center;
         width: 100%;
@@ -280,26 +283,24 @@ body {
 
           .even {
             background-color: $primary-color;
-            color: #1b1b1b;
+            color: $background-color;
             margin: 5px;
             padding: 5px;
-            &.highlight-row{
-              // background: linear-gradient(90deg, rgba(27,27,27,1) 60%, rgba(73,125,73,0) 100%);            
+            &.highlight-row{            
               td{
-                color: #ffffff;
+                color: rgb(6, 185, 60);
               }
             }
           }
 
           .odd {
-            background-color: #1b1b1b;
+            background-color: $background-color;
             color: #e6e6e6;
             margin: 5px;
             padding: 5px;
-            &.highlight-row{
-              // background: linear-gradient(90deg, rgba(27,27,27,1) 60%, rgba(73,125,73,0) 100%);            
+            &.highlight-row{          
               td{
-                color: red;
+                color: rgb(6, 185, 60);
               }
             }
           }
@@ -330,7 +331,7 @@ body {
         height: 200px;
         width: 200px;
         border-radius: 30px;
-        font-family: "Bebas Neue";
+        font-family: $main-font;
         letter-spacing: 2px;
         font-size: 20px;
         background: #2e2e2e;
@@ -346,7 +347,7 @@ body {
           font-size: 16px;
         }
         &:hover {
-          background: #ff9933;
+          background: $primary-color;
         }
       }          
     }
@@ -365,7 +366,7 @@ body {
   }
 }
 
-// footer section
+// Footer section
 #footer {
   background-color: #ffffff;
   position: relative;
@@ -464,7 +465,7 @@ body {
               font-size: 24px;
               text-align: center;
             }
-            background-color: #1b1b1b;
+            background-color: $background-color;
             text-align: center;
             line-height: 80px;
             font-size: 35px;
@@ -533,7 +534,7 @@ body {
     color: #d2d2d2;
     justify-content: center;
     padding: 20px 0;
-    background: #1b1b1b;
+    background: $background-color;
     @include mobile-only {
       font-size: 12px;
       padding: 12px 0;
@@ -544,7 +545,7 @@ body {
 .footer-content {
   position: relative;
   width: 100%;
-  color: #c7c7c7;
+  color: $secondary-color;
   outline: #2e2e2e;
   background-color: rgb(27, 27, 27);
   padding-top: 90px;
@@ -598,12 +599,12 @@ body {
           text-decoration: none;
           margin: 15px 20px;
           span {
-            color: #c7c7c7;
+            color: $secondary-color;
             transition: all ease-in-out 0.2s;
           }
           &:hover {
             span {
-              color: #ff9933;
+              color: $primary-color;
             }
           }
           img {
@@ -716,7 +717,7 @@ body {
   h1 {
     position: relative;
     display: block;
-    font-family: "Bebas Neue";
+    font-family: $main-font;
     letter-spacing: 10px;
     color: #eaeaea;
     font-size: 2.5em;
@@ -727,7 +728,7 @@ body {
       font-size: 1.8em;
     }
     &.text-dark {
-      color: #1b1b1b;
+      color: $background-color;
     }
   }
   i {
@@ -751,13 +752,13 @@ body {
   outline: none;
   overflow: hidden;
   position: relative;
-  color: #c7c7c7;
+  color: $secondary-color;
   font-weight: 700;
   font-size: 30px;
-  background-color: #1b1b1b;
+  background-color: $background-color;
   padding: 10px 50px;
   margin: 40px 20px 20px;
-  font-family: "Bebas Neue";
+  font-family: $main-font;
   letter-spacing: 5px;
   border-radius: 15px;
   border: 1px solid #2e2e2e;
@@ -771,7 +772,7 @@ body {
   }
   &:hover {
     span {
-      color: #1b1b1b;
+      color: $background-color;
     }
     &::after {
       -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
@@ -785,7 +786,7 @@ body {
     top: 0;
     height: 500%;
     width: 140%;
-    background: #ff9933;
+    background: $primary-color;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
@@ -798,9 +799,9 @@ body {
   border: 0;
   outline: 0;
   border-radius: 25px;
-  color: #1b1b1b;
-  background-color: #ff9933;
-  font-family: "Bebas Neue";
+  color: $background-color;
+  background-color: $primary-color;
+  font-family: $main-font;
   font-size: 20px;
   margin-bottom: 50px;
   margin-right: 0;

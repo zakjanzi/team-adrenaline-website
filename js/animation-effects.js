@@ -11,3 +11,7 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el))
+
+
+// An intersection observer notifies your browser when a specific element is within your viewport. So whenever the element becomes
+// visible on your browser, the above function will be executed on that element.
