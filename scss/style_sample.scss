@@ -976,7 +976,7 @@ body {
 
 .wrapper{
   display: flex;
-  max-width: 1200px;
+
   position: relative;
 }
 .wrapper i{
@@ -1021,13 +1021,14 @@ body {
 .carousel.dragging img{
   pointer-events: none;
 }
-.carousel img{
-  height: 340px;
+.carousel div img{
+  height: 300px;
+  margin-right: 50px;
   object-fit: cover;
   user-select: none;
   margin-left: 14px;
-  width: calc(100% / 4);
+  width: calc(30% / 4);
 }
-.carousel img:first-child{
+.carousel div img:first-child{
   margin-left: 0px;
 }

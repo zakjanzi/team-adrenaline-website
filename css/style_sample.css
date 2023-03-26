@@ -1017,7 +1017,6 @@ body {
 
 .wrapper {
   display: flex;
-  max-width: 1200px;
   position: relative;
 }
 
@@ -1071,17 +1070,18 @@ body {
   pointer-events: none;
 }
 
-.carousel img {
-  height: 340px;
+.carousel div img {
+  height: 300px;
+  margin-right: 50px;
   -o-object-fit: cover;
      object-fit: cover;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
   margin-left: 14px;
-  width: 25%;
+  width: 7.5%;
 }
 
-.carousel img:first-child {
+.carousel div img:first-child {
   margin-left: 0px;
 }/*# sourceMappingURL=style_sample.css.map */
