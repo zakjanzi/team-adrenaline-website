@@ -1018,15 +1018,13 @@ body {
 .slide-container {
   width: 75%;
   margin-top: 50px;
-  -webkit-margin-start: 50px;
-          margin-inline-start: 50px;
-  padding: 0;
 }
 
 .slide-content {
   margin: 0 40px;
   overflow: hidden;
   border-radius: 25px;
+  margin-bottom: 50px;
 }
 
 .card {
@@ -1066,7 +1064,7 @@ body {
   bottom: -40px;
   height: 40px;
   width: 40px;
-  background-color: #4070F4;
+  background-color: #ff9933;
 }
 
 .overlay::after {
@@ -1148,11 +1146,11 @@ a:visited {
 }
 
 .swiper-button-next {
-  right: 0;
+  right: 0px;
 }
 
 .swiper-button-prev {
-  left: 0;
+  left: 0px;
 }
 
 .swiper-pagination-bullet {

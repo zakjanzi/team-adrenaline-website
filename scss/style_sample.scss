@@ -977,13 +977,13 @@ body {
 .slide-container{
   width: 75%;
   margin-top: 50px;
-  margin-inline-start: 50px;
-  padding: 0;
+
 }
 .slide-content{
   margin: 0 40px;
   overflow: hidden;
   border-radius: 25px;
+  margin-bottom: 50px;
 }
 
 
@@ -1020,7 +1020,7 @@ body {
   bottom: -40px;
   height: 40px;
   width: 40px;
-  background-color: #4070F4;
+  background-color: #ff9933;
 }
 .overlay::after{
   border-radius: 0 25px 0 0;
@@ -1081,6 +1081,10 @@ a:visited {
   background: #ff9933;
 }
 
+// .swiper {
+//   padding: 50px
+// }
+
 .swiper-navBtn{
   color: #e0bc98;
   transition: color 0.3s ease;
@@ -1093,10 +1097,10 @@ a:visited {
   font-size: 35px;
 }
 .swiper-button-next{
-  right: 0;
+  right: 0px;
 }
 .swiper-button-prev{
-  left: 0;
+  left: 0px;
 }
 .swiper-pagination-bullet{
 
