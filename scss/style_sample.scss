@@ -975,15 +975,18 @@ body {
 }
 
 .slide-container{
-  max-width: 1120px;
-  width: 100%;
-  padding: 40px 0;
+  width: 75%;
+  margin-top: 50px;
+  margin-inline-start: 50px;
+  padding: 0;
 }
 .slide-content{
   margin: 0 40px;
   overflow: hidden;
   border-radius: 25px;
 }
+
+
 .card{
   border-radius: 25px;
   background-color: #2e2e2e;
@@ -1096,6 +1099,7 @@ a:visited {
   left: 0;
 }
 .swiper-pagination-bullet{
+
   background-color: #e0bc98;
   opacity: 1;
 }

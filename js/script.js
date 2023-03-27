@@ -1,13 +1,13 @@
 var swiper = new Swiper(".slide-content", {
     slidesPerView: 3,
-    spaceBetween: 25,
+    spaceBetween: 40,
     loop: true,
     centerSlide: 'true',
     fade: 'true',
     grabCursor: 'true',
     pagination: {
       el: ".swiper-pagination",
-      clickable: true,
+      clickable: false,
       dynamicBullets: true,
     },
     navigation: {
@@ -25,5 +25,8 @@ var swiper = new Swiper(".slide-content", {
         950: {
             slidesPerView: 3,
         },
+        1200: {
+          slidesPerView: 4,
+      },
     },
   });

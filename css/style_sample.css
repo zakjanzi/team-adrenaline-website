@@ -1016,9 +1016,11 @@ body {
 }
 
 .slide-container {
-  max-width: 1120px;
-  width: 100%;
-  padding: 40px 0;
+  width: 75%;
+  margin-top: 50px;
+  -webkit-margin-start: 50px;
+          margin-inline-start: 50px;
+  padding: 0;
 }
 
 .slide-content {
