@@ -366,6 +366,70 @@ body {
   }
 }
 
+// Team section
+
+.team {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-evenly;
+  @include mobile-only {
+    max-width: 420px;
+    overflow: hidden;
+  }
+}
+
+.team-title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-family: "Bebas Neue";
+  color: #c7c7c7;
+  margin-top: 80px;
+}
+
+/* .person p {
+  font-family: 'Bebas Neue';
+  color: #c7c7c7;
+} */
+
+.person-name {
+  font-family: 'Bebas Neue';
+  color: #c7c7c7;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+}
+
+.personimage {
+  width: 150px;
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+
+  color: white;
+  font-size: 50px;
+}
+
+.tags {
+  background-color: #D9D9D9;
+  color: #1b1b1b;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.handle {
+  font-family: 'Bebas Neue';
+  color: #dcb624;
+  font-size: 24px;
+  text-align: center;
+  padding: 20px;
+}
+
 // Footer section
 #footer {
   background-color: #ffffff;
@@ -889,26 +953,183 @@ body {
 /* animations end*/
 
 /* careers page*/
-.careers-body {
-  background-color: $background-color;
-  padding: 0;
-  margin: 0;
-  .careers {
-    display: grid;
-    place-items: center;
-    align-content: center;
-    min-height: 100vh;
-    color: $secondary-color;
-    .careers-title {
-      margin-bottom: 50px;
-      font-size: 38px;
-      font-family: $main-font;
-      .careers-text {
-        font-size: 18px;
-      }
-    }    
-  }
+.careers-body:before {
+  content: "";
+  background: url(https://i.postimg.cc/Bv2yqfrD/The-Team.jpg) no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.2;
+}
+.careers-body .careers {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+  color: #ffffff;
+  z-index: 4;
+}
+.careers-body .careers .careers-title {
+  margin-bottom: 50px;
+  font-size: 50px;
+  font-family: "Bebas Neue";
+  z-index: 5;
+}
+.careers-text {
+  font-size: 50px;
+  z-index: 5;
+  color: #ffffff;
 }
 
 
+.slide-container{
+  width: 75%;
+  margin-top: 50px;
+
+}
+.slide-content{
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+  margin-bottom: 50px;
+}
+
+
+.card{
+  border-radius: 25px;
+  background-color: #2e2e2e;
+}
+.image-content,
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+.image-content{
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1b1b1b;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #ff9933;
+}
+.overlay::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+.card-image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+.card-image .card-img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  /* border: 4px solid #363c4d; */
+}
+.name{
+  font-size: 30px;
+  font-weight: 500;
+  color: #C7C7C7;
+  font-family: 'Bebas Neue';
+}
+.description{
+  font-size: 14px;
+  color: #707070;
+  text-align: center;
+  margin-top: 5px;
+}
+.handle{
+  border: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #1b1b1b;
+  padding: 8px 16px;
+  background-color: #ff9933;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+a:link {
+  font-size: 16px;
+  color: #1b1b1b;
+  font-family: 'Bebas Neue';
+}
+
+a:visited {
+  color: #1b1b1b;
+}
+
+.button:hover{
+  background: #ff9933;
+}
+
+// .swiper {
+//   padding: 50px
+// }
+
+.swiper-navBtn{
+  color: #e0bc98;
+  transition: color 0.3s ease;
+}
+.swiper-navBtn:hover{
+  color: #ff9933;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+  font-size: 35px;
+}
+.swiper-button-next{
+  right: 0px;
+}
+.swiper-button-prev{
+  left: 0px;
+}
+.swiper-pagination-bullet{
+
+  background-color: #e0bc98;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active{
+  background-color: #ff9933;
+}
+
+@media screen and (max-width: 768px) {
+  .slide-content{
+    margin: 0 10px;
+  }
+  .swiper-navBtn{
+    display: none;
+  }
+}
 
