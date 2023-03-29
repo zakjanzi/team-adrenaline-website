@@ -1002,9 +1002,9 @@ body {
     font-size: 50px;
     z-index: 5;
     color: #ffffff;
-    font-family: "Bebas Neu";
     text-align: center;
     padding: 5px;
+    font-family: "Amatic SC", cursive;
   }
 }
 .careers-body:before {
@@ -1034,13 +1034,14 @@ body {
   margin-bottom: 50px;
   font-size: 50px;
   z-index: 5;
+  font-family: "Amatic SC", cursive;
 }
 
 .careers-text {
   font-size: 50px;
   z-index: 5;
   color: #ffffff;
-  font-family: "Roboto";
+  font-family: "Amatic SC", cursive;
 }
 
 .slide-container {
