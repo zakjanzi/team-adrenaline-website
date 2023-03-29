@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 @import './mixins';
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 
 
 //Fonts
@@ -966,7 +967,7 @@ body {
     color: #ffffff;
     text-align: center;
     padding: 5px;
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Bebas Neue', cursive;
   }
 }
 .careers-body:before {
@@ -994,13 +995,13 @@ body {
   margin-bottom: 50px;
   font-size: 50px;
   z-index: 5;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Bebas Neue', cursive;
 }
 .careers-text {
   font-size: 50px;
   z-index: 5;
   color: #ffffff;
-  font-family: 'Amatic SC', cursive;
+  font-family: 'Bebas Neue', cursive;
 }
 
 
