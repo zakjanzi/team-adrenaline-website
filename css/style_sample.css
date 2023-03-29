@@ -344,6 +344,8 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   flex: 0 0 50%;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 #schedule .schedule-card .class-card .card-block {
   position: relative;
