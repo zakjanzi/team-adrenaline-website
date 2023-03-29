@@ -953,26 +953,39 @@ body {
 /* animations end*/
 
 /* careers page*/
-.careers-body {
-  background-color: $background-color;
-  padding: 0;
-  margin: 0;
-  .careers {
-    display: grid;
-    place-items: center;
-    align-content: center;
-    min-height: 100vh;
-    color: $secondary-color;
-    .careers-title {
-      margin-bottom: 50px;
-      font-size: 38px;
-      font-family: $main-font;
-      .careers-text {
-        font-size: 18px;
-      }
-    }    
-  }
+.careers-body:before {
+  content: "";
+  background: url(https://i.postimg.cc/Bv2yqfrD/The-Team.jpg) no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.2;
 }
+.careers-body .careers {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+  color: #ffffff;
+  z-index: 4;
+}
+.careers-body .careers .careers-title {
+  margin-bottom: 50px;
+  font-size: 50px;
+  font-family: "Bebas Neue";
+  z-index: 5;
+}
+.careers-text {
+  font-size: 50px;
+  z-index: 5;
+  color: #ffffff;
+}
+
 
 .slide-container{
   width: 75%;
