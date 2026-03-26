@@ -1,0 +1,269 @@
+---
+---
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <canvas id="grid-canvas" class="absolute inset-0 w-full h-full"></canvas>
+
+  <div class="relative z-10 text-center">
+    <h1 class="font-['Bebas_Neue',cursive] text-7xl md:text-9xl tracking-wider leading-none">
+      <span class="hero-title-team text-silver inline-block opacity-0">Team</span>
+      <span class="hero-title-adrenaline text-gold inline-block opacity-0">Adrenaline</span>
+    </h1>
+    <p class="hero-subtitle mt-4 text-sm md:text-base text-gray tracking-[0.3em] uppercase opacity-0">Parkour & Gymnastics</p>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce opacity-0">
+    <i class="fa-solid fa-chevron-down text-orange text-xl"></i>
+  </div>
+</section>
+
+<style>
+  .hero-title-team {
+    animation: slideFromTopLeft 0.8s ease-out 0.2s forwards;
+  }
+  .hero-title-adrenaline {
+    animation: slideFromBottomRight 0.8s ease-out 0.5s forwards;
+  }
+  .hero-subtitle {
+    animation: blurIn 0.6s ease-out 1s forwards;
+  }
+  .hero-scroll {
+    animation: fadeIn 0.6s ease-out 1.3s forwards;
+  }
+
+  @keyframes slideFromTopLeft {
+    from {
+      opacity: 0;
+      transform: translate(-20px, -20px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes slideFromBottomRight {
+    from {
+      opacity: 0;
+      transform: translate(20px, 20px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes blurIn {
+    from {
+      opacity: 0;
+      filter: blur(8px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+</style>
+
+<script>
+  const canvas = document.getElementById("grid-canvas") as HTMLCanvasElement;
+  const ctx = canvas.getContext("2d")!;
+
+  let width = 0;
+  let height = 0;
+  let mouseX = -1000;
+  let mouseY = -1000;
+  let smoothMouseX = -1000;
+  let smoothMouseY = -1000;
+  let mouseActive = false;
+
+  const hexSize = 30;
+
+  interface Vertex {
+    rx: number;
+    ry: number;
+    dx: number;
+    dy: number;
+    vx: number;
+    vy: number;
+  }
+
+  // Edges as pairs of vertex indices
+  interface Edge {
+    a: number;
+    b: number;
+  }
+
+  let vertices: Vertex[] = [];
+  let edges: Edge[] = [];
+
+  function resize() {
+    width = canvas.width = canvas.offsetWidth;
+    height = canvas.height = canvas.offsetHeight;
+
+    vertices = [];
+    edges = [];
+
+    const vertexMap = new Map<string, number>();
+
+    function vKey(x: number, y: number): string {
+      return `${Math.round(x * 10)},${Math.round(y * 10)}`;
+    }
+
+    function addVertex(x: number, y: number): number {
+      const k = vKey(x, y);
+      if (vertexMap.has(k)) return vertexMap.get(k)!;
+      const idx = vertices.length;
+      vertexMap.set(k, idx);
+      vertices.push({ rx: x, ry: y, dx: 0, dy: 0, vx: 0, vy: 0 });
+      return idx;
+    }
+
+    function addEdge(a: number, b: number) {
+      edges.push({ a, b });
+    }
+
+    // Hex dimensions
+    const w = hexSize * 2;         // width of flat-top hex
+    const h = hexSize * Math.sqrt(3); // height
+    const colStep = w * 0.75;
+    const rowStep = h;
+
+    const numCols = Math.ceil(width / colStep) + 3;
+    const numRows = Math.ceil(height / rowStep) + 3;
+
+    // Generate flat-top hexagons
+    for (let row = -1; row < numRows; row++) {
+      for (let col = -1; col < numCols; col++) {
+        const cx = col * colStep;
+        const cy = row * rowStep + (col % 2 !== 0 ? rowStep * 0.5 : 0);
+
+        // 6 vertices of a flat-top hexagon
+        const verts: number[] = [];
+        for (let i = 0; i < 6; i++) {
+          const angle = (Math.PI / 3) * i;
+          const vx = cx + hexSize * Math.cos(angle);
+          const vy = cy + hexSize * Math.sin(angle);
+          verts.push(addVertex(vx, vy));
+        }
+
+        // 6 edges connecting consecutive vertices
+        for (let i = 0; i < 6; i++) {
+          addEdge(verts[i], verts[(i + 1) % 6]);
+        }
+      }
+    }
+  }
+
+  window.addEventListener("resize", resize);
+
+  const hero = document.getElementById("hero");
+  hero?.addEventListener("mousemove", (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+    mouseActive = true;
+  });
+
+  hero?.addEventListener("mouseleave", () => {
+    mouseActive = false;
+  });
+
+  function draw() {
+    smoothMouseX += (mouseX - smoothMouseX) * 0.12;
+    smoothMouseY += (mouseY - smoothMouseY) * 0.12;
+
+    ctx.clearRect(0, 0, width, height);
+
+    const radius = 150;
+    const strength = 60;
+
+    // Update vertices — spring physics
+    for (const v of vertices) {
+      let pushX = 0;
+      let pushY = 0;
+
+      if (mouseActive) {
+        const ddx = v.rx - smoothMouseX;
+        const ddy = v.ry - smoothMouseY;
+        const dist = Math.sqrt(ddx * ddx + ddy * ddy);
+
+        if (dist < radius && dist > 0) {
+          const force = (1 - dist / radius) * (1 - dist / radius);
+          pushX = (ddx / dist) * force * strength;
+          pushY = (ddy / dist) * force * strength;
+        }
+      }
+
+      const springK = 0.06;
+      const damping = 0.82;
+
+      v.vx += (pushX - v.dx) * springK;
+      v.vy += (pushY - v.dy) * springK;
+      v.vx *= damping;
+      v.vy *= damping;
+      v.dx += v.vx;
+      v.dy += v.vy;
+    }
+
+    // Draw edges
+    for (const edge of edges) {
+      const a = vertices[edge.a];
+      const b = vertices[edge.b];
+
+      const ax = a.rx + a.dx;
+      const ay = a.ry + a.dy;
+      const bx = b.rx + b.dx;
+      const by = b.ry + b.dy;
+
+      const aDisp = Math.sqrt(a.dx * a.dx + a.dy * a.dy);
+      const bDisp = Math.sqrt(b.dx * b.dx + b.dy * b.dy);
+      const avgIntensity = Math.min(1, (aDisp + bDisp) / (2 * strength));
+
+      const baseAlpha = 0.08;
+      const alpha = baseAlpha + avgIntensity * 0.5;
+      const red = Math.round(255 - avgIntensity * 35);
+      const green = Math.round(153 + avgIntensity * 29);
+      const blue = Math.round(51 - avgIntensity * 15);
+
+      ctx.strokeStyle = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+      ctx.lineWidth = 0.5 + avgIntensity * 1;
+
+      ctx.beginPath();
+      ctx.moveTo(ax, ay);
+      ctx.lineTo(bx, by);
+      ctx.stroke();
+    }
+
+    // Draw vertex dots
+    for (const v of vertices) {
+      const x = v.rx + v.dx;
+      const y = v.ry + v.dy;
+
+      const disp = Math.sqrt(v.dx * v.dx + v.dy * v.dy);
+      const intensity = Math.min(1, disp / strength);
+
+      const alpha = 0.1 + intensity * 0.6;
+      const red = Math.round(255 - intensity * 35);
+      const green = Math.round(153 + intensity * 29);
+      const blue = Math.round(51 - intensity * 15);
+
+      const dotRadius = 1 + intensity * 2.5;
+      ctx.fillStyle = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+      ctx.beginPath();
+      ctx.arc(x, y, dotRadius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  draw();
+</script>
