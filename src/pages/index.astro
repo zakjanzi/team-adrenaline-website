@@ -1,13 +1,37 @@
 ---
 import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
 ---
 
 <Base>
-  <main class="flex min-h-screen items-center justify-center">
-    <div class="text-center">
-      <h1 class="text-4xl font-bold text-orange">Team Adrenaline</h1>
-      <p class="mt-4 text-gold">Astro + Tailwind v4 scaffold is working.</p>
-      <p class="mt-2 text-sm text-gray">Migration in progress.</p>
-    </div>
+  <Nav />
+  <main>
+    <!-- Hero placeholder -->
+    <section id="hero" class="flex min-h-screen items-center justify-center">
+      <div class="text-center">
+        <h1 class="font-['Bebas_Neue',cursive] text-6xl md:text-8xl tracking-wider">
+          <span class="text-silver">Team </span>
+          <span class="text-gold">Adrenaline</span>
+        </h1>
+        <p class="mt-4 text-sm text-gray tracking-widest uppercase">Parkour & Gymnastics</p>
+      </div>
+    </section>
+
+    <!-- Section placeholders for nav anchors -->
+    <section id="about" class="min-h-screen flex items-center justify-center">
+      <p class="text-gray">About section — coming next</p>
+    </section>
+
+    <section id="schedule" class="min-h-screen flex items-center justify-center">
+      <p class="text-gray">Schedule section — coming soon</p>
+    </section>
+
+    <section id="team" class="min-h-screen flex items-center justify-center">
+      <p class="text-gray">Team section — coming soon</p>
+    </section>
+
+    <section id="contact" class="min-h-screen flex items-center justify-center">
+      <p class="text-gray">Contact section — coming soon</p>
+    </section>
   </main>
 </Base>
