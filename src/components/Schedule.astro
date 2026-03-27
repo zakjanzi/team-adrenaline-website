@@ -96,6 +96,7 @@ const schedule = [
       <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="aerials">Aerials</button>
       <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="calisthenics">Calisthenics</button>
       <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="adrenaline">Adrenaline Rush</button>
+      <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="freestyle">Freestyle</button>
     </div>
 
     <!-- Day tabs -->
@@ -266,7 +267,7 @@ const schedule = [
       document.querySelector(`[data-panel="${day}"]`)?.classList.remove("hidden");
 
       // Re-apply active filter
-      const activeFilter = document.querySelector(".filter-pill.active")?.getAttribute("data-filter") || "all";
+      const activeFilter = document.querySelector('.filter-pill[data-active="true"]')?.getAttribute("data-filter") || "all";
       applyFilter(activeFilter);
     });
   });
