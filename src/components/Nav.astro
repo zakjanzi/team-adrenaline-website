@@ -1,0 +1,73 @@
+---
+---
+
+<nav id="nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-300" data-scrolled="false">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="#hero" class="flex-shrink-0">
+        <img src="/assets/images/logo-white.png" alt="Team Adrenaline" class="h-10" />
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about" class="nav-link text-sm font-medium tracking-widest uppercase text-silver hover:text-orange transition-colors">About</a>
+        <a href="#schedule" class="nav-link text-sm font-medium tracking-widest uppercase text-silver hover:text-orange transition-colors">Classes</a>
+        <a href="#team" class="nav-link text-sm font-medium tracking-widest uppercase text-silver hover:text-orange transition-colors">Team</a>
+        <a href="#contact" class="nav-link text-sm font-medium tracking-widest uppercase text-silver hover:text-orange transition-colors">Contact</a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menu-toggle" class="md:hidden text-silver hover:text-orange transition-colors" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-dark/95 backdrop-blur-sm border-t border-white/10">
+    <div class="flex flex-col items-center gap-4 py-6">
+      <a href="#about" class="mobile-link text-sm font-medium tracking-widest uppercase text-silver hover:text-orange transition-colors">About</a>
+      <a href="#schedule" class="mobile-link text-sm font-medium tracking-widest uppercase text-silver hover:text-orange transition-colors">Classes</a>
+      <a href="#team" class="mobile-link text-sm font-medium tracking-widest uppercase text-silver hover:text-orange transition-colors">Team</a>
+      <a href="#contact" class="mobile-link text-sm font-medium tracking-widest uppercase text-silver hover:text-orange transition-colors">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  nav[data-scrolled="true"] {
+    background-color: rgba(27, 27, 27, 0.95);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<script>
+  const nav = document.getElementById("nav");
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  // Scroll-based background via data attribute + CSS
+  window.addEventListener("scroll", () => {
+    nav?.setAttribute("data-scrolled", window.scrollY > 50 ? "true" : "false");
+  });
+
+  // Mobile toggle
+  menuToggle?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+    const icon = menuToggle.querySelector("i");
+    icon?.classList.toggle("fa-bars");
+    icon?.classList.toggle("fa-xmark");
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll(".mobile-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+      const icon = menuToggle?.querySelector("i");
+      icon?.classList.add("fa-bars");
+      icon?.classList.remove("fa-xmark");
+    });
+  });
+</script>

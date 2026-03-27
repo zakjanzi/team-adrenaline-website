@@ -1,0 +1,130 @@
+---
+const team = [
+  { name: "Hicham", specialty: "Gymnastics", image: "https://i.postimg.cc/Twn1XWkz/hisham.jpg", instagram: "hichamkahwaji" },
+  { name: "Ralph", specialty: "Gymnastics | Freerun", image: "https://i.postimg.cc/RF2YwW4Z/ralp.jpg", instagram: "ralphabisaad" },
+  { name: "Ghina", specialty: "Gymnastics | Freerun", image: "https://i.postimg.cc/7Yk7bq01/ghina.jpg", instagram: "ghina.chehwan" },
+  { name: "Zaher", specialty: "Freerun", image: "https://i.postimg.cc/kG9QrCyy/zaher.jpg", instagram: "zaherziadeh" },
+  { name: "Alex", specialty: "Freerun", image: "https://i.postimg.cc/PxMH4bV5/alex.jpg", instagram: "alexroyhabchi" },
+  { name: "Elena", specialty: "Gymnastics", image: "https://i.postimg.cc/HWfzzG5j/elena.jpg", instagram: "elenaeid_" },
+  { name: "Joe", specialty: "Freerun", image: "https://i.postimg.cc/zBHtDqKZ/joe.jpg", instagram: "joeri2k" },
+  { name: "Sara", specialty: "Aerial Silk | Aerial Hoop", image: "https://i.postimg.cc/QdjygGG1/sara.jpg", instagram: "sarah.aouad" },
+  { name: "Gilbert", specialty: "Gymnastics", image: "https://i.postimg.cc/28QQx1rX/gilbert.jpg", instagram: "gilbert_hermez" },
+  { name: "Line", specialty: "Gymnastics", image: "https://i.postimg.cc/BbWhXRB8/lyne.jpg", instagram: "linemerheb" },
+  { name: "Tony", specialty: "Gymnastics", image: "https://i.postimg.cc/FzjTcGTT/tony.jpg", instagram: "tonyibrahim14" },
+  { name: "Randa", specialty: "Gymnastics", image: "https://i.postimg.cc/1zj7Z8gr/randa.jpg", instagram: "randagedeon" },
+  { name: "Cyril", specialty: "Freerun", image: "https://i.postimg.cc/7L6SDX7p/cyril.jpg", instagram: "cyrilasmar" },
+  { name: "Simon", specialty: "Freerun", image: "https://i.postimg.cc/MptrdPq4/simon.jpg", instagram: "simonhammam" },
+  { name: "Anthony", specialty: "Calisthenics", image: "https://i.postimg.cc/bryWgK4Z/CA-070223-ADR-Anthony-3.jpg", instagram: "anthony_chartouny" },
+  { name: "Abdo", specialty: "Freerun", image: "https://i.postimg.cc/YC8QJT46/abdo.jpg", instagram: null },
+];
+---
+
+<section id="team" class="relative bg-dark py-20 md:py-32 overflow-hidden">
+  <!-- Header -->
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-12">
+    <h2 class="team-reveal font-['Bebas_Neue',cursive] text-5xl md:text-6xl tracking-wider text-silver text-center opacity-0">
+      The <span class="text-orange">Team</span>
+    </h2>
+  </div>
+
+  <!-- Scroll carousel -->
+  <div class="relative">
+    <!-- Fade edges -->
+    <div class="absolute left-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-r from-dark to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-12 md:w-24 bg-gradient-to-l from-dark to-transparent z-10 pointer-events-none"></div>
+
+    <div id="team-scroll" class="flex gap-6 overflow-x-auto px-12 md:px-24 pb-4 scroll-smooth team-carousel">
+      {team.map((member) => (
+        <div class="team-card flex-shrink-0 w-56 group">
+          <div class="relative overflow-hidden rounded-sm mb-4 aspect-[3/4] bg-white/5">
+            <img
+              src={member.image}
+              alt={member.name}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-60"></div>
+
+            {member.instagram && (
+              <a
+                href={`https://instagram.com/${member.instagram}`}
+                target="_blank"
+                class="absolute bottom-3 right-3 w-9 h-9 flex items-center justify-center bg-dark/60 backdrop-blur-sm text-silver hover:text-orange hover:bg-dark/80 transition-all duration-200 rounded-full"
+                aria-label={`${member.name} on Instagram`}
+              >
+                <i class="fa-brands fa-instagram text-sm"></i>
+              </a>
+            )}
+          </div>
+
+          <h3 class="text-silver text-base font-medium">{member.name}</h3>
+          <p class="text-gray text-xs tracking-wider uppercase mt-1">{member.specialty}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Navigation arrows -->
+  <div class="flex justify-center gap-4 mt-8">
+    <button id="team-prev" class="w-10 h-10 flex items-center justify-center border border-white/10 text-gray hover:text-orange hover:border-orange/40 transition-colors cursor-pointer" aria-label="Previous">
+      <i class="fa-solid fa-chevron-left text-sm"></i>
+    </button>
+    <button id="team-next" class="w-10 h-10 flex items-center justify-center border border-white/10 text-gray hover:text-orange hover:border-orange/40 transition-colors cursor-pointer" aria-label="Next">
+      <i class="fa-solid fa-chevron-right text-sm"></i>
+    </button>
+  </div>
+</section>
+
+<style>
+  .team-carousel {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .team-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .team-reveal.visible {
+    animation: teamFadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes teamFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll(".team-reveal").forEach((el) => {
+    observer.observe(el);
+  });
+
+  // Carousel navigation
+  const scrollContainer = document.getElementById("team-scroll");
+  const scrollAmount = 280;
+
+  document.getElementById("team-prev")?.addEventListener("click", () => {
+    scrollContainer?.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  });
+
+  document.getElementById("team-next")?.addEventListener("click", () => {
+    scrollContainer?.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  });
+</script>

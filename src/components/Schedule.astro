@@ -1,0 +1,274 @@
+---
+const disciplines: Record<string, { color: string; border: string }> = {
+  gymnastics: { color: "bg-orange/10 text-orange", border: "border-orange/30" },
+  parkour: { color: "bg-gold/10 text-gold", border: "border-gold/30" },
+  calisthenics: { color: "bg-silver/10 text-silver", border: "border-silver/30" },
+  "aerial-silk": { color: "bg-orange/10 text-orange", border: "border-orange/20" },
+  adrenaline: { color: "bg-gold/10 text-gold", border: "border-gold/20" },
+  freestyle: { color: "bg-silver/10 text-silver", border: "border-silver/20" },
+};
+
+const schedule = [
+  {
+    day: "Monday",
+    short: "Mon",
+    classes: [
+      { name: "Gymnastics 1", time: "4PM – 5PM", type: "gymnastics" },
+      { name: "Gymnastics 2", time: "5PM – 6PM", type: "gymnastics" },
+      { name: "Gymnastics 3", time: "6PM – 7PM", type: "gymnastics" },
+      { name: "Gymnastics 4", time: "7PM – 8:30PM", type: "gymnastics" },
+      { name: "Calisthenics", time: "8:30PM", type: "calisthenics" },
+    ],
+  },
+  {
+    day: "Tuesday",
+    short: "Tue",
+    classes: [
+      { name: "Aerial Silk Beginners", time: "5PM – 6PM", type: "aerial-silk" },
+      { name: "Aerial Silk Advanced", time: "6PM – 7PM", type: "aerial-silk" },
+      { name: "Aerial Silk Adults", time: "7PM – 8PM", type: "aerial-silk" },
+      { name: "Parkour 1", time: "7PM – 8PM", type: "parkour" },
+      { name: "Parkour 2", time: "7PM – 8PM", type: "parkour" },
+      { name: "Adrenaline Rush (Adults Parkour)", time: "8:30PM", type: "adrenaline", tags: ["adrenaline", "parkour"] },
+    ],
+  },
+  {
+    day: "Wednesday",
+    short: "Wed",
+    classes: [
+      { name: "Parkour 1", time: "6PM – 7PM", type: "parkour" },
+      { name: "Parkour 2", time: "7PM – 8PM", type: "parkour" },
+      { name: "Calisthenics", time: "8PM", type: "calisthenics" },
+    ],
+  },
+  {
+    day: "Thursday",
+    short: "Thu",
+    classes: [
+      { name: "Gymnastics 1", time: "4PM – 5PM", type: "gymnastics" },
+      { name: "Gymnastics 2", time: "5PM – 6PM", type: "gymnastics" },
+      { name: "Aerial Silk Intermediate", time: "5PM – 6PM", type: "aerial-silk" },
+      { name: "Gymnastics 3", time: "5PM – 6PM", type: "gymnastics" },
+      { name: "Gymnastics 4", time: "5PM – 6PM", type: "gymnastics" },
+      { name: "Adrenaline Rush (Adults Parkour)", time: "8:30PM", type: "adrenaline", tags: ["adrenaline", "parkour"] },
+    ],
+  },
+  {
+    day: "Friday",
+    short: "Fri",
+    classes: [
+      { name: "Gymnastics 1", time: "4PM – 5PM", type: "gymnastics" },
+      { name: "Gymnastics 2", time: "5PM – 6PM", type: "gymnastics" },
+      { name: "Parkour 1", time: "6PM – 7PM", type: "parkour" },
+      { name: "Parkour 2", time: "7PM – 8PM", type: "parkour" },
+      { name: "Aerial Silk Beginners", time: "6PM – 7PM", type: "aerial-silk" },
+      { name: "Aerial Silk Adults", time: "7PM – 8PM", type: "aerial-silk" },
+      { name: "Calisthenics", time: "8PM", type: "calisthenics" },
+    ],
+  },
+  {
+    day: "Saturday",
+    short: "Sat",
+    classes: [
+      { name: "Gymnastics 1", time: "9AM – 10AM", type: "gymnastics" },
+      { name: "Gymnastics 2-3", time: "10AM – 11AM", type: "gymnastics" },
+      { name: "Gymnastics 1", time: "11AM – 12PM", type: "gymnastics" },
+      { name: "Freestyle (Open Gym)", time: "6PM – 8PM", type: "freestyle", tags: ["freestyle", "parkour"] },
+    ],
+  },
+];
+---
+
+<section id="schedule" class="relative bg-dark py-20 md:py-32">
+  <div class="max-w-5xl mx-auto px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h2 class="schedule-reveal font-['Bebas_Neue',cursive] text-5xl md:text-6xl tracking-wider text-silver opacity-0">
+        Class <span class="text-orange">Schedule</span>
+      </h2>
+    </div>
+
+    <!-- Discipline filter pills -->
+    <div class="schedule-reveal flex flex-wrap justify-center gap-2 mb-8 opacity-0">
+      <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="all" data-active="true">All</button>
+      <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="gymnastics">Gymnastics</button>
+      <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="parkour">Parkour</button>
+      <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="aerial-silk">Aerial Silk</button>
+      <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="calisthenics">Calisthenics</button>
+      <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="adrenaline">Adrenaline Rush</button>
+      <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="freestyle">Freestyle</button>
+    </div>
+
+    <!-- Day tabs -->
+    <div class="schedule-reveal flex justify-center mb-10 opacity-0">
+      <div class="inline-flex flex-wrap justify-center gap-1 bg-white/5 p-1 rounded-sm">
+        {schedule.map((day, i) => (
+          <button
+            class:list={[
+              "day-tab px-4 py-2 text-sm tracking-widest uppercase transition-all duration-200 cursor-pointer",
+              i === 0 ? "bg-orange text-dark" : "text-gray hover:text-silver hover:bg-white/10",
+            ]}
+            data-day={i}
+          >
+            <span class="hidden sm:inline">{day.day}</span>
+            <span class="sm:hidden">{day.short}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Day panels -->
+    {schedule.map((day, dayIndex) => (
+      <div
+        class:list={["day-panel", dayIndex === 0 ? "" : "hidden"]}
+        data-panel={dayIndex}
+      >
+        <div class="grid gap-3">
+          {day.classes.map((cls) => {
+            const d = disciplines[cls.type];
+            return (
+              <div class={`schedule-card flex items-center justify-between p-4 border ${d.border} rounded-sm bg-white/[0.02] hover:bg-white/[0.05]`} data-type={cls.type} data-tags={(cls.tags || [cls.type]).join(",")}>
+                <div class="flex items-center gap-4">
+                  <span class={`inline-block px-3 py-1 text-xs tracking-wider uppercase rounded-sm ${d.color}`}>
+                    {cls.type}
+                  </span>
+                  <span class="text-silver text-sm md:text-base">{cls.name}</span>
+                </div>
+                <span class="text-gray text-sm">{cls.time}</span>
+              </div>
+            );
+          })}
+        </div>
+        <p class="no-classes-msg hidden text-center text-gray text-sm py-8">Try another day</p>
+      </div>
+    ))}
+
+    <!-- CTA area -->
+    <div class="schedule-reveal mt-12 flex flex-col items-center gap-8 opacity-0">
+      <a
+        href="https://wa.me/96171044297"
+        target="_blank"
+        class="inline-flex items-center gap-3 px-10 py-4 bg-orange text-dark font-medium tracking-widest text-sm uppercase hover:bg-gold transition-colors duration-300"
+      >
+        <i class="fa-brands fa-whatsapp text-lg"></i>
+        Start Training
+      </a>
+      <p class="text-gray text-sm">
+        Private sessions available upon request.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .schedule-reveal.visible {
+    animation: scheduleFadeUp 0.6s ease-out forwards;
+  }
+
+  .schedule-card {
+    transition: all 0.3s ease;
+  }
+
+  .schedule-card.filtered-out {
+    display: none;
+  }
+
+  .filter-pill[data-active="true"] {
+    border-color: rgba(255, 153, 51, 0.3);
+    color: #ff9933;
+    background-color: rgba(255, 153, 51, 0.1);
+  }
+
+  @keyframes scheduleFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+</style>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll(".schedule-reveal").forEach((el, i) => {
+    (el as HTMLElement).style.animationDelay = `${i * 0.12}s`;
+    observer.observe(el);
+  });
+
+  // Discipline filtering
+  const filterPills = document.querySelectorAll(".filter-pill");
+
+  function applyFilter(filter: string) {
+    // Apply to all panels (visible and hidden)
+    document.querySelectorAll(".day-panel").forEach((panel) => {
+      let visibleCount = 0;
+      panel.querySelectorAll(".schedule-card").forEach((card) => {
+        const tags = (card.getAttribute("data-tags") || card.getAttribute("data-type") || "").split(",");
+        if (filter === "all" || tags.includes(filter)) {
+          card.classList.remove("filtered-out");
+          visibleCount++;
+        } else {
+          card.classList.add("filtered-out");
+        }
+      });
+
+      const msg = panel.querySelector(".no-classes-msg");
+      if (msg) {
+        if (visibleCount === 0) {
+          msg.classList.remove("hidden");
+        } else {
+          msg.classList.add("hidden");
+        }
+      }
+    });
+  }
+
+  filterPills.forEach((pill) => {
+    pill.addEventListener("click", () => {
+      filterPills.forEach((p) => p.removeAttribute("data-active"));
+      pill.setAttribute("data-active", "true");
+
+      const filter = pill.getAttribute("data-filter") || "all";
+      applyFilter(filter);
+    });
+  });
+
+  // Tab switching
+  const tabs = document.querySelectorAll(".day-tab");
+  const panels = document.querySelectorAll(".day-panel");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const day = tab.getAttribute("data-day");
+
+      tabs.forEach((t) => {
+        t.classList.remove("bg-orange", "text-dark");
+        t.classList.add("text-gray", "hover:text-silver", "hover:bg-white/10");
+      });
+      tab.classList.add("bg-orange", "text-dark");
+      tab.classList.remove("text-gray", "hover:text-silver", "hover:bg-white/10");
+
+      panels.forEach((p) => p.classList.add("hidden"));
+      document.querySelector(`[data-panel="${day}"]`)?.classList.remove("hidden");
+
+      // Re-apply active filter
+      const activeFilter = document.querySelector('.filter-pill[data-active="true"]')?.getAttribute("data-filter") || "all";
+      applyFilter(activeFilter);
+    });
+  });
+</script>
