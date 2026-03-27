@@ -83,6 +83,10 @@
   let smoothMouseY = -1000;
   let mouseActive = false;
 
+  // Ambient animation for mobile / no-mouse devices
+  const isMobile = window.matchMedia("(pointer: coarse)").matches || window.matchMedia("(hover: none)").matches;
+  let ambientTime = 0;
+
   const hexSize = 30;
 
   interface Vertex {
@@ -184,6 +188,54 @@
     const radius = 150;
     const strength = 60;
 
+    // Ambient mode: slowly orbiting virtual attractors
+    if (isMobile && !mouseActive) {
+      ambientTime += 0.003;
+      // Two attractors moving in different patterns for organic feel
+      const ax1 = width * 0.5 + Math.cos(ambientTime * 0.7) * width * 0.3;
+      const ay1 = height * 0.5 + Math.sin(ambientTime * 0.9) * height * 0.25;
+      const ax2 = width * 0.5 + Math.sin(ambientTime * 0.5 + 2) * width * 0.25;
+      const ay2 = height * 0.5 + Math.cos(ambientTime * 0.6 + 1) * height * 0.3;
+
+      const ambientRadius = 180;
+      const ambientStrength = 35;
+
+      for (const v of vertices) {
+        let pushX = 0;
+        let pushY = 0;
+
+        // Attractor 1
+        let ddx = v.rx - ax1;
+        let ddy = v.ry - ay1;
+        let dist = Math.sqrt(ddx * ddx + ddy * ddy);
+        if (dist < ambientRadius && dist > 0) {
+          const force = (1 - dist / ambientRadius) * (1 - dist / ambientRadius);
+          pushX += (ddx / dist) * force * ambientStrength;
+          pushY += (ddy / dist) * force * ambientStrength;
+        }
+
+        // Attractor 2
+        ddx = v.rx - ax2;
+        ddy = v.ry - ay2;
+        dist = Math.sqrt(ddx * ddx + ddy * ddy);
+        if (dist < ambientRadius && dist > 0) {
+          const force = (1 - dist / ambientRadius) * (1 - dist / ambientRadius);
+          pushX += (ddx / dist) * force * ambientStrength * 0.7;
+          pushY += (ddy / dist) * force * ambientStrength * 0.7;
+        }
+
+        const springK = 0.04;
+        const damping = 0.85;
+
+        v.vx += (pushX - v.dx) * springK;
+        v.vy += (pushY - v.dy) * springK;
+        v.vx *= damping;
+        v.vy *= damping;
+        v.dx += v.vx;
+        v.dy += v.vy;
+      }
+    } else {
+
     // Update vertices — spring physics
     for (const v of vertices) {
       let pushX = 0;
@@ -211,6 +263,7 @@
       v.dx += v.vx;
       v.dy += v.vy;
     }
+    } // end else (desktop mode)
 
     // Draw edges
     for (const edge of edges) {
