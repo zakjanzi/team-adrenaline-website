@@ -3,7 +3,7 @@ const disciplines: Record<string, { color: string; border: string }> = {
   gymnastics: { color: "bg-orange/10 text-orange", border: "border-orange/30" },
   parkour: { color: "bg-gold/10 text-gold", border: "border-gold/30" },
   calisthenics: { color: "bg-silver/10 text-silver", border: "border-silver/30" },
-  aerials: { color: "bg-orange/10 text-orange", border: "border-orange/20" },
+  "aerial-silk": { color: "bg-orange/10 text-orange", border: "border-orange/20" },
   adrenaline: { color: "bg-gold/10 text-gold", border: "border-gold/20" },
   freestyle: { color: "bg-silver/10 text-silver", border: "border-silver/20" },
 };
@@ -24,12 +24,12 @@ const schedule = [
     day: "Tuesday",
     short: "Tue",
     classes: [
-      { name: "Aerials Beginners", time: "5PM – 6PM", type: "aerials" },
-      { name: "Aerials Advanced", time: "6PM – 7PM", type: "aerials" },
-      { name: "Aerials Adults", time: "7PM – 8PM", type: "aerials" },
+      { name: "Aerial Silk Beginners", time: "5PM – 6PM", type: "aerial-silk" },
+      { name: "Aerial Silk Advanced", time: "6PM – 7PM", type: "aerial-silk" },
+      { name: "Aerial Silk Adults", time: "7PM – 8PM", type: "aerial-silk" },
       { name: "Parkour 1", time: "7PM – 8PM", type: "parkour" },
       { name: "Parkour 2", time: "7PM – 8PM", type: "parkour" },
-      { name: "Adrenaline Rush", time: "8:30PM", type: "adrenaline" },
+      { name: "Adrenaline Rush (Adults Parkour)", time: "8:30PM", type: "adrenaline", tags: ["adrenaline", "parkour"] },
     ],
   },
   {
@@ -47,10 +47,10 @@ const schedule = [
     classes: [
       { name: "Gymnastics 1", time: "4PM – 5PM", type: "gymnastics" },
       { name: "Gymnastics 2", time: "5PM – 6PM", type: "gymnastics" },
-      { name: "Aerials Intermediate", time: "5PM – 6PM", type: "aerials" },
+      { name: "Aerial Silk Intermediate", time: "5PM – 6PM", type: "aerial-silk" },
       { name: "Gymnastics 3", time: "5PM – 6PM", type: "gymnastics" },
       { name: "Gymnastics 4", time: "5PM – 6PM", type: "gymnastics" },
-      { name: "Adrenaline Rush", time: "8:30PM", type: "adrenaline" },
+      { name: "Adrenaline Rush (Adults Parkour)", time: "8:30PM", type: "adrenaline", tags: ["adrenaline", "parkour"] },
     ],
   },
   {
@@ -61,8 +61,8 @@ const schedule = [
       { name: "Gymnastics 2", time: "5PM – 6PM", type: "gymnastics" },
       { name: "Parkour 1", time: "6PM – 7PM", type: "parkour" },
       { name: "Parkour 2", time: "7PM – 8PM", type: "parkour" },
-      { name: "Aerials Beginners", time: "6PM – 7PM", type: "aerials" },
-      { name: "Aerials Adults", time: "7PM – 8PM", type: "aerials" },
+      { name: "Aerial Silk Beginners", time: "6PM – 7PM", type: "aerial-silk" },
+      { name: "Aerial Silk Adults", time: "7PM – 8PM", type: "aerial-silk" },
       { name: "Calisthenics", time: "8PM", type: "calisthenics" },
     ],
   },
@@ -73,7 +73,7 @@ const schedule = [
       { name: "Gymnastics 1", time: "9AM – 10AM", type: "gymnastics" },
       { name: "Gymnastics 2-3", time: "10AM – 11AM", type: "gymnastics" },
       { name: "Gymnastics 1", time: "11AM – 12PM", type: "gymnastics" },
-      { name: "Freestyle (Open Gym)", time: "6PM – 8PM", type: "freestyle" },
+      { name: "Freestyle (Open Gym)", time: "6PM – 8PM", type: "freestyle", tags: ["freestyle", "parkour"] },
     ],
   },
 ];
@@ -93,7 +93,7 @@ const schedule = [
       <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="all" data-active="true">All</button>
       <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="gymnastics">Gymnastics</button>
       <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="parkour">Parkour</button>
-      <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="aerials">Aerials</button>
+      <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="aerial-silk">Aerial Silk</button>
       <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="calisthenics">Calisthenics</button>
       <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="adrenaline">Adrenaline Rush</button>
       <button class="filter-pill px-3 py-1 text-xs tracking-wider uppercase rounded-full border border-white/10 text-gray cursor-pointer transition-all duration-200" data-filter="freestyle">Freestyle</button>
@@ -127,7 +127,7 @@ const schedule = [
           {day.classes.map((cls) => {
             const d = disciplines[cls.type];
             return (
-              <div class={`schedule-card flex items-center justify-between p-4 border ${d.border} rounded-sm bg-white/[0.02] hover:bg-white/[0.05]`} data-type={cls.type}>
+              <div class={`schedule-card flex items-center justify-between p-4 border ${d.border} rounded-sm bg-white/[0.02] hover:bg-white/[0.05]`} data-type={cls.type} data-tags={(cls.tags || [cls.type]).join(",")}>
                 <div class="flex items-center gap-4">
                   <span class={`inline-block px-3 py-1 text-xs tracking-wider uppercase rounded-sm ${d.color}`}>
                     {cls.type}
@@ -218,8 +218,8 @@ const schedule = [
     document.querySelectorAll(".day-panel").forEach((panel) => {
       let visibleCount = 0;
       panel.querySelectorAll(".schedule-card").forEach((card) => {
-        const type = card.getAttribute("data-type");
-        if (filter === "all" || type === filter) {
+        const tags = (card.getAttribute("data-tags") || card.getAttribute("data-type") || "").split(",");
+        if (filter === "all" || tags.includes(filter)) {
           card.classList.remove("filtered-out");
           visibleCount++;
         } else {
